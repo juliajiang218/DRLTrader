@@ -46,7 +46,7 @@ env_kwargs = {
 }
 
 
-e_train_gym = StockTradingEnv(df = train, **env_kwargs)
+e_train_gym = StockTradingEnv(df = train, **env_kwargs) # can be accessed at env_stock_trading/env_stocktrading.py
 ```
 ### Environment for Trading:
 ```python
