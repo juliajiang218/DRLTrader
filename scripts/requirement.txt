@@ -1,0 +1,9 @@
+pandas
+numpy
+matplotlib
+seaborn
+yfinance
+requests
+gymnasium
+stable-baselines3
+finrl
