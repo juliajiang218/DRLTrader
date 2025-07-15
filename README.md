@@ -9,10 +9,12 @@ The project involves implementing and comparing multiple deep reinforcement lear
 ## Input Data:
 There are 29 unique tics (stocks) in the train dataset.
 
+```python
 stock_dimension = len(train.tic.unique()) # 29
 state_space = 1 + 2*stock_dimension + len(INDICATORS)*stock_dimension # 291
-
+```
 ## Env Parameter:
+```python
 buy_cost_list = sell_cost_list = [0.001] * stock_dimension
 num_stock_shares = [0] * stock_dimension
 
@@ -31,6 +33,8 @@ env_kwargs = {
 
 
 e_train_gym = StockTradingEnv(df = train, **env_kwargs)
-
+```
 ### Environment for Trading:
+```python
 env_train, _ = e_train_gym.get_sb_env()
+```
