@@ -8,7 +8,8 @@ The project involves implementing and comparing multiple deep reinforcement lear
 
 ## Input Data:
 **Key Implementations can be referenced in /scripts/main.py**
-There are 29 unique tics (stocks) in the train dataset.
+
+Note: There are 29 unique tics (stocks) in the train dataset.
 
 ```python
 stock_dimension = len(train.tic.unique()) # 29
