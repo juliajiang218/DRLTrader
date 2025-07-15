@@ -7,6 +7,7 @@ Integrate Deep Reinforcement Learning Agents with explainability features in a s
 The project involves implementing and comparing multiple deep reinforcement learning algorithms (A2C, DDPG, PPO) for financial market trading. The goal is to understand how these algorithms work, compare their performance, and add explainability features to provide insights into trading decisions.
 
 ## Input Data:
+**Key Implementations can be referenced in /scripts/main.py**
 There are 29 unique tics (stocks) in the train dataset.
 
 ```python
