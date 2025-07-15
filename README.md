@@ -1,7 +1,7 @@
 # Deep Reinforcement Learning Agents with explainability features in a simulated real-data driven market
 
 ## Summary
-Integrate Deep Reinforcement Learning Agents with explainability features in a simulated real-data driven market to optimize trading strategies and allow users to monitor daily, weekly, monthly portfolio returns. Deployed on Cloud.
+Integrate Deep Reinforcement Learning Agents (A2C, PPO, DDPG, Ensemble Strategy) with explainability features in a simulated real-data driven market to optimize trading strategies and allow users to monitor daily, weekly, monthly portfolio returns. Deployed on Cloud.
 
 ## Objective
 The project involves implementing and comparing multiple deep reinforcement learning algorithms (A2C, DDPG, PPO) for financial market trading. The goal is to understand how these algorithms work, compare their performance, and add explainability features to provide insights into trading decisions.
