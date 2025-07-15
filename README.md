@@ -1,4 +1,4 @@
-# Deep Reinforcement Learning Agents with interpretable attribution features in a simulated real-data driven market
+# Deep Reinforcement Learning Agents with interpretable attribution features in a simulated real-time data driven market
 
 ## Summary
 Integrate Explainable Deep Reinforcement Learning Agents (A2C, PPO, DDPG, Ensemble Strategy) in a simulated real-data driven market to optimize trading strategies and allow users to monitor daily, weekly, monthly portfolio returns. 
