@@ -7,7 +7,7 @@ Integrate Deep Reinforcement Learning Agents (A2C, PPO, DDPG, Ensemble Strategy)
 The project involves implementing and comparing multiple deep reinforcement learning algorithms (A2C, DDPG, PPO) for financial market trading. The goal is to understand how these algorithms work, compare their performance, and add explainability features to provide insights into trading decisions.
 
 ## Input Data:
-**Key Implementations can be referenced in /scripts/main.py**
+**Key Implementations can be referenced in scripts/main.py**
 
 Note: There are 29 unique tics (stocks) in the train dataset.
 
