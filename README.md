@@ -13,6 +13,16 @@ The project involves implementing and comparing multiple deep reinforcement lear
 
 Note: There are 29 unique tics (stocks) in the train dataset.
 
+INDICATORS are technical indicators {"macd",
+    "boll_ub",
+    "boll_lb",
+    "rsi_30",
+    "cci_30",
+    "dx_30",
+    "close_30_sma",
+    "close_60_sma",}
+used to add more observations for agents to better learn market patterns.
+
 ```python
 stock_dimension = len(train.tic.unique()) # 29
 state_space = 1 + 2*stock_dimension + len(INDICATORS)*stock_dimension # 291
@@ -42,3 +52,8 @@ e_train_gym = StockTradingEnv(df = train, **env_kwargs)
 ```python
 env_train, _ = e_train_gym.get_sb_env()
 ```
+
+### Current Model A2C's result, trained with 10 million timesteps:
+
+under results/a2c/graphs
+
