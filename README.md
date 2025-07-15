@@ -2,8 +2,8 @@
 
 ## Summary
 Integrate Explainable Deep Reinforcement Learning Agents (A2C, PPO, DDPG, Ensemble Strategy) in a simulated real-data driven market to optimize trading strategies and allow users to monitor daily, weekly, monthly portfolio returns. 
-Use integrated gradients for attribution features in order to attribute input data based on model's predictions, in consideration of model interpretability. 
-Deployed on Cloud.
+In consideration of model interpretability, use integrated gradients for attribution features in order to score each input feature's data points based on model's predictions, to attribute how important each feature contributes to the final output. 
+Final Trained Models are deployed on Cloud.
 
 ## Objective
 The project involves implementing and comparing multiple deep reinforcement learning algorithms (A2C, DDPG, PPO) for financial market trading. The goal is to understand how these algorithms work, compare their performance, and add explainability features to provide insights into and optimize trading decisions.
