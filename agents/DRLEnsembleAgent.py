@@ -3,7 +3,7 @@ Disclaimer:
 This file contains the DRLEnsembleAgent class, which is a custom ensemble agent for training reinforcement learning agents to trade stocks.
 Code: This implementation borrows code from https://github.com/AI4Finance-Foundation/FinRL/blob/master/finrl/agents/stablebaselines3/models.py
 
-It is used to train the agents in the DRLAgent class. The script is modified to train agents in the customizedDRLAgent class.
+It is used to train the agents in the DRLAgent class. The script is modified to train agents in the customized DRLAgent class.
 For educational purposes only.
 """
 from __future__ import annotations

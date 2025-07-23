@@ -1,8 +1,8 @@
 """
 Disclaimer:
 This file contains the DRLAgent class, which is a custom agent for training reinforcement learning agents to trade stocks.
-Code: This implementation borrows code from https://github.com/AI4Finance-Foundation/FinRL/blob/master/finrl/meta/agent/drl_agent.py
-
+Code: This implementation borrows code from https://github.com/AI4Finance-Foundation/FinRL/blob/master/finrl/agents/stablebaselines3/models.py
+The code has been modified to better fit the purpose of this project.
 It is used to train the agents in the DRLAgent class. 
 For educational purposes only.
 """

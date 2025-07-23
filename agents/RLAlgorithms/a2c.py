@@ -27,9 +27,7 @@ class A2C(OnPolicyAlgorithm):
 
     Paper: https://arxiv.org/abs/1602.01783
     Code: This implementation borrows code from https://github.com/ikostrikov/pytorch-a2c-ppo-acktr-gail and
-    and Stable Baselines (https://github.com/hill-a/stable-baselines)
-
-    Introduction to A2C: https://hackernoon.com/intuitive-rl-intro-to-advantage-actor-critic-a2c-4ff545978752
+    and Stable Baselines (https://github.com/openai/baselines/blob/master/baselines/a2c/a2c.py)
 
     :param policy: The policy model to use (MlpPolicy, CnnPolicy, ...)
     :param env: The environment to learn from (if registered in Gym, can be str)

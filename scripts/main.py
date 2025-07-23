@@ -2,6 +2,8 @@
 # Imports and Logging
 # =====================
 import warnings
+
+from scripts import papertrade
 warnings.filterwarnings("ignore")
 
 import sys
@@ -24,7 +26,7 @@ sys.path.append("../FinRL-Library")
 
 from finrl.config_tickers import DOW_30_TICKER
 from preprocessor.yahoodownloader import YahooDownloader
-from env_stock_trading.env_stocktrading import StockTradingEnv
+from EnvTrade.env_trading import StockTradingEnv
 from agents.DRLAgent import DRLAgent
 from agents.DRLEnsembleAgent import DRLEnsembleAgent
 from finrl.plot import backtest_stats, backtest_plot, get_daily_return, get_baseline
@@ -101,7 +103,7 @@ def create_env_kwargs(df):
     num_stock_shares = [0] * stock_dimension
     env_kwargs = {
         "hmax": 100,
-        "initial_amount": 1000000,
+        "initial_amount": 1000000, # 1 Million
         "num_stock_shares": num_stock_shares,
         "buy_cost_pct": buy_cost_list,
         "sell_cost_pct": sell_cost_list,
@@ -122,20 +124,28 @@ def train_a2c_agent(agent):
     logger.info("Training A2C agent...")
     model_a2c = agent.get_model("a2c")
     tmp_path = RESULTS_DIR + "/a2c"
+
     new_logger_a2c = configure(tmp_path, ["stdout", "csv"]) # , "tensorboard"
     model_a2c.set_logger(new_logger_a2c)
-    trained_a2c = agent.train_model(model=model_a2c, tb_log_name="a2c", total_timesteps=10000000) 
+    trained_a2c = agent.train_model(model=model_a2c, tb_log_name="a2c", total_timesteps=10000000) # 10 million 
     trained_a2c.save(TRAINED_MODEL_DIR + "/AGENT_a2c")
     logger.info("A2C agent trained and saved.")
 
 def train_ppo_agent(agent):
     """Train and save a PPO agent."""
     logger.info("Training PPO agent...")
-    model = agent.get_model("ppo")
+    PPO_PARAMS = {
+    "n_steps": 2048,
+    "ent_coef": 0.01,
+    "learning_rate": 0.00025,
+    "batch_size": 128,
+    }
+    model = agent.get_model("ppo", model_kwargs = PPO_PARAMS)
     tmp_path = RESULTS_DIR + "/ppo"
+
     new_logger = configure(tmp_path, ["stdout", "csv", "tensorboard"])
     model.set_logger(new_logger)
-    trained_model = agent.train_model(model=model, tb_log_name="ppo", total_timesteps=50000)
+    trained_model = agent.train_model(model=model, tb_log_name="ppo", total_timesteps=10000000)
     trained_model.save(TRAINED_MODEL_DIR + "/AGENT_ppo")
     logger.info("PPO agent trained and saved.")
 
@@ -143,10 +153,10 @@ def train_ddpg_agent(agent):
     """Train and save a DDPG agent."""
     logger.info("Training DDPG agent...")
     model = agent.get_model("ddpg")
-    tmp_path = RESULTS_DIR + "/ddpg"
+    tmp_path = RESULTS_DIR + "/ddpg" #FIXME: where exacly is this saved?
     new_logger = configure(tmp_path, ["stdout", "csv", "tensorboard"])
     model.set_logger(new_logger)
-    trained_model = agent.train_model(model=model, tb_log_name="ddpg", total_timesteps=50000)
+    trained_model = agent.train_model(model=model, tb_log_name="ddpg", total_timesteps=10000000)
     trained_model.save(TRAINED_MODEL_DIR + "/AGENT_ddpg")
     logger.info("DDPG agent trained and saved.")
 
@@ -165,7 +175,7 @@ def train_ensemble_agent(df, stock_dimension, state_space):
         "reward_scaling": 1e-4,
         "print_verbosity": 5
     }
-    rebalance_window = 63
+    rebalance_window = 63 # 3 months
     validation_window = 63
     ensemble_agent = DRLEnsembleAgent(
         df=df,
@@ -178,6 +188,7 @@ def train_ensemble_agent(df, stock_dimension, state_space):
     A2C_model_kwargs = {'n_steps': 5, 'ent_coef': 0.005, 'learning_rate': 0.0007}
     PPO_model_kwargs = {"ent_coef": 0.01, "n_steps": 2048, "learning_rate": 0.00025, "batch_size": 128}
     DDPG_model_kwargs = {"buffer_size": 10_000, "learning_rate": 0.0005, "batch_size": 128}
+    # FIXME: right now, the agents will be retrained based on timesteps. Can I pass trained agents to do ensemble strategy?
     timesteps_dict = {'a2c': 50_000, 'ppo': 50_000, 'ddpg': 50_000}
     df_summary = ensemble_agent.run_ensemble_strategy(
         A2C_model_kwargs=A2C_model_kwargs,
@@ -192,25 +203,33 @@ def train_ensemble_agent(df, stock_dimension, state_space):
 # Main Orchestration
 # =====================
 def main():
-    """Main function to orchestrate data loading, environment setup, and agent training."""
+    """
+    Main function to orchestrate data loading, environment setup, and agent training.
+    
+    Note: 
+    Individual Algorithms must be trained with "train" dataset, while ensemble agent is trained with the entire dataset.
+    """
     df, train, test = preprocess_data()
     
     # print(df)
-    env_kwargs, stock_dimension, state_space = create_env_kwargs(df)
+    env_kwargs, stock_dimension, state_space = create_env_kwargs(train)
     # print("Stock dimension:", stock_dimension)
     # print("State space:", state_space)
 
+    # it needs to be "train" for a2c, ppo, ddpg
     train_env = StockTradingEnv(df=train, **env_kwargs)
     env_train, _ = train_env.get_sb_env()
     agent = DRLAgent(env=env_train)
 
-    train_a2c_agent(agent)
+    # train_a2c_agent(agent)
     # train_ppo_agent(agent)
     # train_ddpg_agent(agent)
     # train_ensemble_agent(df, stock_dimension, state_space)
+    print("Running main")
 
 # =====================
 # Script Entry Point
 # =====================
 if __name__ == "__main__":
     main()
+    papertrade()

@@ -2,11 +2,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import argparse
 
 # Supported algorithms and their result paths
 ALGO_PATHS = {
     'a2c': '/deac/csc/classes/csc790/jianb21/Ensemble_stockTrading_2020/results/a2c/progress.csv',
-    # 'ppo': 'scripts/results/ppo/progress.csv',
+    'ppo': '/deac/csc/classes/csc790/jianb21/Ensemble_stockTrading_2020/results/ppo/progress.csv',
     # 'ddpg': 'scripts/results/ddpg/progress.csv',
 }
 
@@ -21,17 +22,17 @@ ALGO_METRICS = {
         ('train/std', 'Action Std'),
         ('time/fps', 'FPS'),
     ],
-    # 'ppo': [
-    #     ('train/reward', 'Reward'),
-    #     ('train/loss', 'Policy Loss'),
-    #     ('train/value_loss', 'Value Loss'),
-    #     ('train/explained_variance', 'Explained Variance'),
-    #     ('train/entropy_loss', 'Entropy Loss'),
-    #     ('train/std', 'Action Std'),
-    #     ('time/fps', 'FPS'),
-    #     ('train/learning_rate', 'Learning Rate'),
-    #     ('train/n_updates', 'N Updates'),
-    # ],
+    'ppo': [
+        ('train/reward', 'Reward'),
+        ('train/loss', 'Policy Loss'),
+        ('train/value_loss', 'Value Loss'),
+        ('train/explained_variance', 'Explained Variance'),
+        ('train/entropy_loss', 'Entropy Loss'),
+        ('train/std', 'Action Std'),
+        ('time/fps', 'FPS'),
+        ('train/learning_rate', 'Learning Rate'),
+        ('train/n_updates', 'N Updates'),
+    ],
     # 'ddpg': [
     #     ('train/reward', 'Reward'),
     #     ('train/actor_loss', 'Actor Loss'),
@@ -45,7 +46,7 @@ ALGO_METRICS = {
 # X-axis for each algorithm
 ALGO_X = {
     'a2c': 'time/total_timesteps',
-    # 'ppo': 'time/total_timesteps',
+    'ppo': 'time/total_timesteps',
     # 'ddpg': 'time/total_timesteps',
 }
 
@@ -57,7 +58,7 @@ def load_results(algo):
     df = pd.read_csv(path)
     return df
 
-def plot_individual_metrics(algo, df, save_dir='results/a2c/graphs'):
+def plot_individual_metrics(algo, df, save_dir='results/graphs'):
     metrics = ALGO_METRICS[algo]
     x_col = ALGO_X[algo]
     n = len(metrics)
@@ -83,7 +84,7 @@ def plot_individual_metrics(algo, df, save_dir='results/a2c/graphs'):
     plt.close(fig)
     print(f"Saved {algo.upper()} metrics plot to {out_path}")
 
-def plot_comparative_metric(metric, algos, dfs, save_dir='scripts/graphs'):
+def plot_comparative_metric(metric, algos, dfs, save_dir='results/graphs'):
     plt.figure(figsize=(10,6))
     for algo, df in dfs.items():
         if df is not None and metric in df.columns:
@@ -114,8 +115,19 @@ def print_summary(algo, df):
     if 'train/explained_variance' in df.columns:
         print(f"Final explained variance: {df['train/explained_variance'].iloc[-1]:.3f}")
 
+def plot_backtest_result(csv_path, save_dir='results/graphs', plot_filename='backtest_result.png'):
+    os.makedirs(save_dir, exist_ok=True)
+    df = pd.read_csv(csv_path, index_col=0)
+    plt.rcParams["figure.figsize"] = (15, 5)
+    plt.figure()
+    df.plot()
+    plt.title('Backtest Result')
+    plt.savefig(os.path.join(save_dir, plot_filename))
+    plt.close()
+    print(f"Saved backtest plot to {os.path.join(save_dir, plot_filename)}")
+
 def main():
-    algos = ['a2c'] #, 'ppo', 'ddpg'
+    algos = ['a2c', 'ppo'] #, 'ppo', 'ddpg'
     dfs = {algo: load_results(algo) for algo in algos}
     # Plot individual metrics
     for algo, df in dfs.items():
@@ -127,6 +139,14 @@ def main():
     # Optionally, plot other comparative metrics
     # for metric in ['train/value_loss', 'train/policy_loss', 'train/actor_loss', 'train/critic_loss']:
         # plot_comparative_metric(metric, algos, dfs)
+
+    # CLI usage
+    parser = argparse.ArgumentParser(description='Plot backtest result from CSV.')
+    parser.add_argument('--csv', type=str, default='results/graphs/backtest_result.csv', help='Path to backtest result CSV file')
+    parser.add_argument('--save_dir', type=str, default='results/graphs', help='Directory to save the plot')
+    parser.add_argument('--plot_filename', type=str, default='backtest_result.png', help='Filename for the saved plot')
+    args = parser.parse_args()
+    # plot_backtest_result(args.csv, args.save_dir, args.plot_filename)
 
 if __name__ == '__main__':
     main()
