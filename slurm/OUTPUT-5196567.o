@@ -1,8 +1,0 @@
-#########################BEGIN-PROLOG#########################
-JobName   = DRLAgentTraining
-Account   = csc790
-NodeList  = cpu-amd-[10,14-15,17-18]
-Resources = cpu=20,mem=510G,node=5,billing=42
-WorkDir   = /deac/csc/classes/csc790-sp-2025/jianb21/Ensemble_stockTrading_2020/slurm
-###########################END-PROLOG#########################
-ERROR: No such file or directory on '/deac/csc/classes/csc790/jianb21/Ensemble_stockTrading_2020/python/3.11.8'

@@ -1,0 +1,4228 @@
+#########################BEGIN-PROLOG#########################
+JobName   = DRLAgentTraining
+Account   = csc790
+NodeList  = cpu-intel-75
+Resources = cpu=20,mem=102G,node=1,billing=20
+WorkDir   = /deac/csc/classes/csc790-sp-2025/jianb21/Ensemble_stockTrading_2020/slurm
+###########################END-PROLOG#########################
+State shape on reset: 291
+{'batch_size': 128, 'buffer_size': 50000, 'learning_rate': 0.001}
+Using cpu device
+Logging to /deac/csc/classes/csc790/jianb21/Ensemble_stockTrading_2020/results/ddpg
+State shape on reset: 291
+Episode: 2
+State shape on reset: 291
+Episode: 3
+State shape on reset: 291
+Episode: 4
+State shape on reset: 291
+Episode: 5
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 4         |
+|    fps             | 25        |
+|    time_elapsed    | 449       |
+|    total_timesteps | 11572     |
+| train/             |           |
+|    actor_loss      | -3.35     |
+|    critic_loss     | 19.9      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 11471     |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.0296    |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 6
+State shape on reset: 291
+Episode: 7
+State shape on reset: 291
+Episode: 8
+State shape on reset: 291
+Episode: 9
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 8         |
+|    fps             | 25        |
+|    time_elapsed    | 908       |
+|    total_timesteps | 23144     |
+| train/             |           |
+|    actor_loss      | -6.55     |
+|    critic_loss     | 6.3       |
+|    learning_rate   | 0.001     |
+|    n_updates       | 23043     |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.0601    |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 10
+day: 2892, episode: 10
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 11
+State shape on reset: 291
+Episode: 12
+State shape on reset: 291
+Episode: 13
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 12        |
+|    fps             | 25        |
+|    time_elapsed    | 1371      |
+|    total_timesteps | 34716     |
+| train/             |           |
+|    actor_loss      | -6.25     |
+|    critic_loss     | 3.8       |
+|    learning_rate   | 0.001     |
+|    n_updates       | 34615     |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.0906    |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 14
+State shape on reset: 291
+Episode: 15
+State shape on reset: 291
+Episode: 16
+State shape on reset: 291
+Episode: 17
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 16        |
+|    fps             | 25        |
+|    time_elapsed    | 1841      |
+|    total_timesteps | 46288     |
+| train/             |           |
+|    actor_loss      | -9.66     |
+|    critic_loss     | 2.43      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 46187     |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.121     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 18
+State shape on reset: 291
+Episode: 19
+State shape on reset: 291
+Episode: 20
+day: 2892, episode: 20
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 21
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 20        |
+|    fps             | 24        |
+|    time_elapsed    | 2321      |
+|    total_timesteps | 57860     |
+| train/             |           |
+|    actor_loss      | -12       |
+|    critic_loss     | 1.24      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 57759     |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 22
+State shape on reset: 291
+Episode: 23
+State shape on reset: 291
+Episode: 24
+State shape on reset: 291
+Episode: 25
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 24        |
+|    fps             | 24        |
+|    time_elapsed    | 2827      |
+|    total_timesteps | 69432     |
+| train/             |           |
+|    actor_loss      | -10.9     |
+|    critic_loss     | 1.94      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 69331     |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 26
+State shape on reset: 291
+Episode: 27
+State shape on reset: 291
+Episode: 28
+State shape on reset: 291
+Episode: 29
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 28        |
+|    fps             | 24        |
+|    time_elapsed    | 3350      |
+|    total_timesteps | 81004     |
+| train/             |           |
+|    actor_loss      | -13.1     |
+|    critic_loss     | 1.81      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 80903     |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 30
+day: 2892, episode: 30
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 31
+State shape on reset: 291
+Episode: 32
+State shape on reset: 291
+Episode: 33
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 32        |
+|    fps             | 23        |
+|    time_elapsed    | 3895      |
+|    total_timesteps | 92576     |
+| train/             |           |
+|    actor_loss      | -11.8     |
+|    critic_loss     | 0.773     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 92475     |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 34
+State shape on reset: 291
+Episode: 35
+State shape on reset: 291
+Episode: 36
+State shape on reset: 291
+Episode: 37
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 36        |
+|    fps             | 23        |
+|    time_elapsed    | 4450      |
+|    total_timesteps | 104148    |
+| train/             |           |
+|    actor_loss      | -10.8     |
+|    critic_loss     | 0.911     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 104047    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 38
+State shape on reset: 291
+Episode: 39
+State shape on reset: 291
+Episode: 40
+day: 2892, episode: 40
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 41
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 40        |
+|    fps             | 23        |
+|    time_elapsed    | 5011      |
+|    total_timesteps | 115720    |
+| train/             |           |
+|    actor_loss      | -13.2     |
+|    critic_loss     | 0.739     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 115619    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 42
+State shape on reset: 291
+Episode: 43
+State shape on reset: 291
+Episode: 44
+State shape on reset: 291
+Episode: 45
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 44        |
+|    fps             | 22        |
+|    time_elapsed    | 5573      |
+|    total_timesteps | 127292    |
+| train/             |           |
+|    actor_loss      | -13.5     |
+|    critic_loss     | 0.972     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 127191    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 46
+State shape on reset: 291
+Episode: 47
+State shape on reset: 291
+Episode: 48
+State shape on reset: 291
+Episode: 49
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 48        |
+|    fps             | 22        |
+|    time_elapsed    | 6132      |
+|    total_timesteps | 138864    |
+| train/             |           |
+|    actor_loss      | -13.3     |
+|    critic_loss     | 1.37      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 138763    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 50
+day: 2892, episode: 50
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 51
+State shape on reset: 291
+Episode: 52
+State shape on reset: 291
+Episode: 53
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 52        |
+|    fps             | 22        |
+|    time_elapsed    | 6691      |
+|    total_timesteps | 150436    |
+| train/             |           |
+|    actor_loss      | -12.3     |
+|    critic_loss     | 0.692     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 150335    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 54
+State shape on reset: 291
+Episode: 55
+State shape on reset: 291
+Episode: 56
+State shape on reset: 291
+Episode: 57
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 56        |
+|    fps             | 22        |
+|    time_elapsed    | 7250      |
+|    total_timesteps | 162008    |
+| train/             |           |
+|    actor_loss      | -14.4     |
+|    critic_loss     | 0.958     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 161907    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 58
+State shape on reset: 291
+Episode: 59
+State shape on reset: 291
+Episode: 60
+day: 2892, episode: 60
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 61
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 60        |
+|    fps             | 22        |
+|    time_elapsed    | 7813      |
+|    total_timesteps | 173580    |
+| train/             |           |
+|    actor_loss      | -12.3     |
+|    critic_loss     | 0.777     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 173479    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 62
+State shape on reset: 291
+Episode: 63
+State shape on reset: 291
+Episode: 64
+State shape on reset: 291
+Episode: 65
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 64        |
+|    fps             | 22        |
+|    time_elapsed    | 8373      |
+|    total_timesteps | 185152    |
+| train/             |           |
+|    actor_loss      | -10.9     |
+|    critic_loss     | 0.959     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 185051    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 66
+State shape on reset: 291
+Episode: 67
+State shape on reset: 291
+Episode: 68
+State shape on reset: 291
+Episode: 69
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 68        |
+|    fps             | 22        |
+|    time_elapsed    | 8934      |
+|    total_timesteps | 196724    |
+| train/             |           |
+|    actor_loss      | -13.5     |
+|    critic_loss     | 0.764     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 196623    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 70
+day: 2892, episode: 70
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 71
+State shape on reset: 291
+Episode: 72
+State shape on reset: 291
+Episode: 73
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 72        |
+|    fps             | 21        |
+|    time_elapsed    | 9493      |
+|    total_timesteps | 208296    |
+| train/             |           |
+|    actor_loss      | -13.1     |
+|    critic_loss     | 0.812     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 208195    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 74
+State shape on reset: 291
+Episode: 75
+State shape on reset: 291
+Episode: 76
+State shape on reset: 291
+Episode: 77
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 76        |
+|    fps             | 21        |
+|    time_elapsed    | 10051     |
+|    total_timesteps | 219868    |
+| train/             |           |
+|    actor_loss      | -13.9     |
+|    critic_loss     | 1         |
+|    learning_rate   | 0.001     |
+|    n_updates       | 219767    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 78
+State shape on reset: 291
+Episode: 79
+State shape on reset: 291
+Episode: 80
+day: 2892, episode: 80
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 81
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 80        |
+|    fps             | 21        |
+|    time_elapsed    | 10610     |
+|    total_timesteps | 231440    |
+| train/             |           |
+|    actor_loss      | -12.6     |
+|    critic_loss     | 1.59      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 231339    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 82
+State shape on reset: 291
+Episode: 83
+State shape on reset: 291
+Episode: 84
+State shape on reset: 291
+Episode: 85
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 84        |
+|    fps             | 21        |
+|    time_elapsed    | 11168     |
+|    total_timesteps | 243012    |
+| train/             |           |
+|    actor_loss      | -15.6     |
+|    critic_loss     | 0.531     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 242911    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 86
+State shape on reset: 291
+Episode: 87
+State shape on reset: 291
+Episode: 88
+State shape on reset: 291
+Episode: 89
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 88        |
+|    fps             | 21        |
+|    time_elapsed    | 11729     |
+|    total_timesteps | 254584    |
+| train/             |           |
+|    actor_loss      | -14.8     |
+|    critic_loss     | 0.631     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 254483    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 90
+day: 2892, episode: 90
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 91
+State shape on reset: 291
+Episode: 92
+State shape on reset: 291
+Episode: 93
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 92        |
+|    fps             | 21        |
+|    time_elapsed    | 12286     |
+|    total_timesteps | 266156    |
+| train/             |           |
+|    actor_loss      | -13.3     |
+|    critic_loss     | 1.45      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 266055    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 94
+State shape on reset: 291
+Episode: 95
+State shape on reset: 291
+Episode: 96
+State shape on reset: 291
+Episode: 97
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 96        |
+|    fps             | 21        |
+|    time_elapsed    | 12844     |
+|    total_timesteps | 277728    |
+| train/             |           |
+|    actor_loss      | -12.5     |
+|    critic_loss     | 0.76      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 277627    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 98
+State shape on reset: 291
+Episode: 99
+State shape on reset: 291
+Episode: 100
+day: 2892, episode: 100
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 101
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 100       |
+|    fps             | 21        |
+|    time_elapsed    | 13402     |
+|    total_timesteps | 289300    |
+| train/             |           |
+|    actor_loss      | -11.1     |
+|    critic_loss     | 0.325     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 289199    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 102
+State shape on reset: 291
+Episode: 103
+State shape on reset: 291
+Episode: 104
+State shape on reset: 291
+Episode: 105
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 104       |
+|    fps             | 21        |
+|    time_elapsed    | 13961     |
+|    total_timesteps | 300872    |
+| train/             |           |
+|    actor_loss      | -12.3     |
+|    critic_loss     | 0.61      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 300771    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 106
+State shape on reset: 291
+Episode: 107
+State shape on reset: 291
+Episode: 108
+State shape on reset: 291
+Episode: 109
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 108       |
+|    fps             | 21        |
+|    time_elapsed    | 14520     |
+|    total_timesteps | 312444    |
+| train/             |           |
+|    actor_loss      | -10.2     |
+|    critic_loss     | 0.414     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 312343    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 110
+day: 2892, episode: 110
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 111
+State shape on reset: 291
+Episode: 112
+State shape on reset: 291
+Episode: 113
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 112       |
+|    fps             | 21        |
+|    time_elapsed    | 15079     |
+|    total_timesteps | 324016    |
+| train/             |           |
+|    actor_loss      | -13.2     |
+|    critic_loss     | 0.959     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 323915    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 114
+State shape on reset: 291
+Episode: 115
+State shape on reset: 291
+Episode: 116
+State shape on reset: 291
+Episode: 117
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 116       |
+|    fps             | 21        |
+|    time_elapsed    | 15642     |
+|    total_timesteps | 335588    |
+| train/             |           |
+|    actor_loss      | -13.3     |
+|    critic_loss     | 0.594     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 335487    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 118
+State shape on reset: 291
+Episode: 119
+State shape on reset: 291
+Episode: 120
+day: 2892, episode: 120
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 121
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 120       |
+|    fps             | 21        |
+|    time_elapsed    | 16201     |
+|    total_timesteps | 347160    |
+| train/             |           |
+|    actor_loss      | -10.1     |
+|    critic_loss     | 0.563     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 347059    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 122
+State shape on reset: 291
+Episode: 123
+State shape on reset: 291
+Episode: 124
+State shape on reset: 291
+Episode: 125
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 124       |
+|    fps             | 21        |
+|    time_elapsed    | 16761     |
+|    total_timesteps | 358732    |
+| train/             |           |
+|    actor_loss      | -15.3     |
+|    critic_loss     | 0.28      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 358631    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 126
+State shape on reset: 291
+Episode: 127
+State shape on reset: 291
+Episode: 128
+State shape on reset: 291
+Episode: 129
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 128       |
+|    fps             | 21        |
+|    time_elapsed    | 17322     |
+|    total_timesteps | 370304    |
+| train/             |           |
+|    actor_loss      | -11.8     |
+|    critic_loss     | 0.974     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 370203    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 130
+day: 2892, episode: 130
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 131
+State shape on reset: 291
+Episode: 132
+State shape on reset: 291
+Episode: 133
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 132       |
+|    fps             | 21        |
+|    time_elapsed    | 17882     |
+|    total_timesteps | 381876    |
+| train/             |           |
+|    actor_loss      | -13       |
+|    critic_loss     | 0.409     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 381775    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 134
+State shape on reset: 291
+Episode: 135
+State shape on reset: 291
+Episode: 136
+State shape on reset: 291
+Episode: 137
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 136       |
+|    fps             | 21        |
+|    time_elapsed    | 18441     |
+|    total_timesteps | 393448    |
+| train/             |           |
+|    actor_loss      | -13.6     |
+|    critic_loss     | 0.526     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 393347    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 138
+State shape on reset: 291
+Episode: 139
+State shape on reset: 291
+Episode: 140
+day: 2892, episode: 140
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 141
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 140       |
+|    fps             | 21        |
+|    time_elapsed    | 19000     |
+|    total_timesteps | 405020    |
+| train/             |           |
+|    actor_loss      | -11.7     |
+|    critic_loss     | 0.563     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 404919    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 142
+State shape on reset: 291
+Episode: 143
+State shape on reset: 291
+Episode: 144
+State shape on reset: 291
+Episode: 145
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 144       |
+|    fps             | 21        |
+|    time_elapsed    | 19564     |
+|    total_timesteps | 416592    |
+| train/             |           |
+|    actor_loss      | -12.4     |
+|    critic_loss     | 0.434     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 416491    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 146
+State shape on reset: 291
+Episode: 147
+State shape on reset: 291
+Episode: 148
+State shape on reset: 291
+Episode: 149
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 148       |
+|    fps             | 21        |
+|    time_elapsed    | 20124     |
+|    total_timesteps | 428164    |
+| train/             |           |
+|    actor_loss      | -14.6     |
+|    critic_loss     | 0.428     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 428063    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 150
+day: 2892, episode: 150
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 151
+State shape on reset: 291
+Episode: 152
+State shape on reset: 291
+Episode: 153
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 152       |
+|    fps             | 21        |
+|    time_elapsed    | 20682     |
+|    total_timesteps | 439736    |
+| train/             |           |
+|    actor_loss      | -11.4     |
+|    critic_loss     | 0.515     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 439635    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 154
+State shape on reset: 291
+Episode: 155
+State shape on reset: 291
+Episode: 156
+State shape on reset: 291
+Episode: 157
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 156       |
+|    fps             | 21        |
+|    time_elapsed    | 21243     |
+|    total_timesteps | 451308    |
+| train/             |           |
+|    actor_loss      | -14.5     |
+|    critic_loss     | 0.444     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 451207    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 158
+State shape on reset: 291
+Episode: 159
+State shape on reset: 291
+Episode: 160
+day: 2892, episode: 160
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 161
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 160       |
+|    fps             | 21        |
+|    time_elapsed    | 21803     |
+|    total_timesteps | 462880    |
+| train/             |           |
+|    actor_loss      | -12.6     |
+|    critic_loss     | 0.325     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 462779    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 162
+State shape on reset: 291
+Episode: 163
+State shape on reset: 291
+Episode: 164
+State shape on reset: 291
+Episode: 165
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 164       |
+|    fps             | 21        |
+|    time_elapsed    | 22362     |
+|    total_timesteps | 474452    |
+| train/             |           |
+|    actor_loss      | -12.6     |
+|    critic_loss     | 0.341     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 474351    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 166
+State shape on reset: 291
+Episode: 167
+State shape on reset: 291
+Episode: 168
+State shape on reset: 291
+Episode: 169
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 168       |
+|    fps             | 21        |
+|    time_elapsed    | 22923     |
+|    total_timesteps | 486024    |
+| train/             |           |
+|    actor_loss      | -13.1     |
+|    critic_loss     | 0.385     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 485923    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 170
+day: 2892, episode: 170
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 171
+State shape on reset: 291
+Episode: 172
+State shape on reset: 291
+Episode: 173
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 172       |
+|    fps             | 21        |
+|    time_elapsed    | 23484     |
+|    total_timesteps | 497596    |
+| train/             |           |
+|    actor_loss      | -15.4     |
+|    critic_loss     | 0.33      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 497495    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 174
+State shape on reset: 291
+Episode: 175
+State shape on reset: 291
+Episode: 176
+State shape on reset: 291
+Episode: 177
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 176       |
+|    fps             | 21        |
+|    time_elapsed    | 24043     |
+|    total_timesteps | 509168    |
+| train/             |           |
+|    actor_loss      | -12.7     |
+|    critic_loss     | 0.508     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 509067    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 178
+State shape on reset: 291
+Episode: 179
+State shape on reset: 291
+Episode: 180
+day: 2892, episode: 180
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 181
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 180       |
+|    fps             | 21        |
+|    time_elapsed    | 24606     |
+|    total_timesteps | 520740    |
+| train/             |           |
+|    actor_loss      | -14.7     |
+|    critic_loss     | 0.312     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 520639    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 182
+State shape on reset: 291
+Episode: 183
+State shape on reset: 291
+Episode: 184
+State shape on reset: 291
+Episode: 185
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 184       |
+|    fps             | 21        |
+|    time_elapsed    | 25162     |
+|    total_timesteps | 532312    |
+| train/             |           |
+|    actor_loss      | -12.1     |
+|    critic_loss     | 0.282     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 532211    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 186
+State shape on reset: 291
+Episode: 187
+State shape on reset: 291
+Episode: 188
+State shape on reset: 291
+Episode: 189
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 188       |
+|    fps             | 21        |
+|    time_elapsed    | 25718     |
+|    total_timesteps | 543884    |
+| train/             |           |
+|    actor_loss      | -12.5     |
+|    critic_loss     | 0.355     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 543783    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 190
+day: 2892, episode: 190
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 191
+State shape on reset: 291
+Episode: 192
+State shape on reset: 291
+Episode: 193
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 192       |
+|    fps             | 21        |
+|    time_elapsed    | 26273     |
+|    total_timesteps | 555456    |
+| train/             |           |
+|    actor_loss      | -12.1     |
+|    critic_loss     | 0.357     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 555355    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 194
+State shape on reset: 291
+Episode: 195
+State shape on reset: 291
+Episode: 196
+State shape on reset: 291
+Episode: 197
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 196       |
+|    fps             | 21        |
+|    time_elapsed    | 26828     |
+|    total_timesteps | 567028    |
+| train/             |           |
+|    actor_loss      | -11.1     |
+|    critic_loss     | 0.391     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 566927    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 198
+State shape on reset: 291
+Episode: 199
+State shape on reset: 291
+Episode: 200
+day: 2892, episode: 200
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 201
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 200       |
+|    fps             | 21        |
+|    time_elapsed    | 27384     |
+|    total_timesteps | 578600    |
+| train/             |           |
+|    actor_loss      | -12.8     |
+|    critic_loss     | 0.629     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 578499    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 202
+State shape on reset: 291
+Episode: 203
+State shape on reset: 291
+Episode: 204
+State shape on reset: 291
+Episode: 205
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 204       |
+|    fps             | 21        |
+|    time_elapsed    | 27940     |
+|    total_timesteps | 590172    |
+| train/             |           |
+|    actor_loss      | -13.2     |
+|    critic_loss     | 0.922     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 590071    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 206
+State shape on reset: 291
+Episode: 207
+State shape on reset: 291
+Episode: 208
+State shape on reset: 291
+Episode: 209
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 208       |
+|    fps             | 21        |
+|    time_elapsed    | 28495     |
+|    total_timesteps | 601744    |
+| train/             |           |
+|    actor_loss      | -12       |
+|    critic_loss     | 1.93      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 601643    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 210
+day: 2892, episode: 210
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 211
+State shape on reset: 291
+Episode: 212
+State shape on reset: 291
+Episode: 213
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 212       |
+|    fps             | 21        |
+|    time_elapsed    | 29049     |
+|    total_timesteps | 613316    |
+| train/             |           |
+|    actor_loss      | -12.4     |
+|    critic_loss     | 0.331     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 613215    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 214
+State shape on reset: 291
+Episode: 215
+State shape on reset: 291
+Episode: 216
+State shape on reset: 291
+Episode: 217
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 216       |
+|    fps             | 21        |
+|    time_elapsed    | 29607     |
+|    total_timesteps | 624888    |
+| train/             |           |
+|    actor_loss      | -12.4     |
+|    critic_loss     | 0.23      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 624787    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 218
+State shape on reset: 291
+Episode: 219
+State shape on reset: 291
+Episode: 220
+day: 2892, episode: 220
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 221
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 220       |
+|    fps             | 21        |
+|    time_elapsed    | 30161     |
+|    total_timesteps | 636460    |
+| train/             |           |
+|    actor_loss      | -13.5     |
+|    critic_loss     | 0.303     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 636359    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 222
+State shape on reset: 291
+Episode: 223
+State shape on reset: 291
+Episode: 224
+State shape on reset: 291
+Episode: 225
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 224       |
+|    fps             | 21        |
+|    time_elapsed    | 30715     |
+|    total_timesteps | 648032    |
+| train/             |           |
+|    actor_loss      | -14.1     |
+|    critic_loss     | 2.07      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 647931    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 226
+State shape on reset: 291
+Episode: 227
+State shape on reset: 291
+Episode: 228
+State shape on reset: 291
+Episode: 229
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 228       |
+|    fps             | 21        |
+|    time_elapsed    | 31269     |
+|    total_timesteps | 659604    |
+| train/             |           |
+|    actor_loss      | -12.4     |
+|    critic_loss     | 0.453     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 659503    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 230
+day: 2892, episode: 230
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 231
+State shape on reset: 291
+Episode: 232
+State shape on reset: 291
+Episode: 233
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 232       |
+|    fps             | 21        |
+|    time_elapsed    | 31823     |
+|    total_timesteps | 671176    |
+| train/             |           |
+|    actor_loss      | -14.9     |
+|    critic_loss     | 0.504     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 671075    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 234
+State shape on reset: 291
+Episode: 235
+State shape on reset: 291
+Episode: 236
+State shape on reset: 291
+Episode: 237
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 236       |
+|    fps             | 21        |
+|    time_elapsed    | 32379     |
+|    total_timesteps | 682748    |
+| train/             |           |
+|    actor_loss      | -11.7     |
+|    critic_loss     | 0.259     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 682647    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 238
+State shape on reset: 291
+Episode: 239
+State shape on reset: 291
+Episode: 240
+day: 2892, episode: 240
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 241
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 240       |
+|    fps             | 21        |
+|    time_elapsed    | 32934     |
+|    total_timesteps | 694320    |
+| train/             |           |
+|    actor_loss      | -15.6     |
+|    critic_loss     | 0.27      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 694219    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 242
+State shape on reset: 291
+Episode: 243
+State shape on reset: 291
+Episode: 244
+State shape on reset: 291
+Episode: 245
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 244       |
+|    fps             | 21        |
+|    time_elapsed    | 33489     |
+|    total_timesteps | 705892    |
+| train/             |           |
+|    actor_loss      | -11.3     |
+|    critic_loss     | 0.464     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 705791    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 246
+State shape on reset: 291
+Episode: 247
+State shape on reset: 291
+Episode: 248
+State shape on reset: 291
+Episode: 249
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 248       |
+|    fps             | 21        |
+|    time_elapsed    | 34045     |
+|    total_timesteps | 717464    |
+| train/             |           |
+|    actor_loss      | -13.3     |
+|    critic_loss     | 0.354     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 717363    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 250
+day: 2892, episode: 250
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 251
+State shape on reset: 291
+Episode: 252
+State shape on reset: 291
+Episode: 253
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 252       |
+|    fps             | 21        |
+|    time_elapsed    | 34605     |
+|    total_timesteps | 729036    |
+| train/             |           |
+|    actor_loss      | -15.3     |
+|    critic_loss     | 0.409     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 728935    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 254
+State shape on reset: 291
+Episode: 255
+State shape on reset: 291
+Episode: 256
+State shape on reset: 291
+Episode: 257
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 256       |
+|    fps             | 21        |
+|    time_elapsed    | 35160     |
+|    total_timesteps | 740608    |
+| train/             |           |
+|    actor_loss      | -16       |
+|    critic_loss     | 0.58      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 740507    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 258
+State shape on reset: 291
+Episode: 259
+State shape on reset: 291
+Episode: 260
+day: 2892, episode: 260
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 261
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 260       |
+|    fps             | 21        |
+|    time_elapsed    | 35717     |
+|    total_timesteps | 752180    |
+| train/             |           |
+|    actor_loss      | -13.5     |
+|    critic_loss     | 0.372     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 752079    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 262
+State shape on reset: 291
+Episode: 263
+State shape on reset: 291
+Episode: 264
+State shape on reset: 291
+Episode: 265
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 264       |
+|    fps             | 21        |
+|    time_elapsed    | 36275     |
+|    total_timesteps | 763752    |
+| train/             |           |
+|    actor_loss      | -12.4     |
+|    critic_loss     | 0.273     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 763651    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 266
+State shape on reset: 291
+Episode: 267
+State shape on reset: 291
+Episode: 268
+State shape on reset: 291
+Episode: 269
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 268       |
+|    fps             | 21        |
+|    time_elapsed    | 36832     |
+|    total_timesteps | 775324    |
+| train/             |           |
+|    actor_loss      | -13.3     |
+|    critic_loss     | 0.404     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 775223    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 270
+day: 2892, episode: 270
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 271
+State shape on reset: 291
+Episode: 272
+State shape on reset: 291
+Episode: 273
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 272       |
+|    fps             | 21        |
+|    time_elapsed    | 37389     |
+|    total_timesteps | 786896    |
+| train/             |           |
+|    actor_loss      | -12.1     |
+|    critic_loss     | 0.331     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 786795    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 274
+State shape on reset: 291
+Episode: 275
+State shape on reset: 291
+Episode: 276
+State shape on reset: 291
+Episode: 277
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 276       |
+|    fps             | 21        |
+|    time_elapsed    | 37945     |
+|    total_timesteps | 798468    |
+| train/             |           |
+|    actor_loss      | -13.7     |
+|    critic_loss     | 0.488     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 798367    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 278
+State shape on reset: 291
+Episode: 279
+State shape on reset: 291
+Episode: 280
+day: 2892, episode: 280
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 281
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 280       |
+|    fps             | 21        |
+|    time_elapsed    | 38503     |
+|    total_timesteps | 810040    |
+| train/             |           |
+|    actor_loss      | -12       |
+|    critic_loss     | 0.247     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 809939    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 282
+State shape on reset: 291
+Episode: 283
+State shape on reset: 291
+Episode: 284
+State shape on reset: 291
+Episode: 285
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 284       |
+|    fps             | 21        |
+|    time_elapsed    | 39060     |
+|    total_timesteps | 821612    |
+| train/             |           |
+|    actor_loss      | -13.6     |
+|    critic_loss     | 0.292     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 821511    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 286
+State shape on reset: 291
+Episode: 287
+State shape on reset: 291
+Episode: 288
+State shape on reset: 291
+Episode: 289
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 288       |
+|    fps             | 21        |
+|    time_elapsed    | 39617     |
+|    total_timesteps | 833184    |
+| train/             |           |
+|    actor_loss      | -11.6     |
+|    critic_loss     | 0.199     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 833083    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 290
+day: 2892, episode: 290
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 291
+State shape on reset: 291
+Episode: 292
+State shape on reset: 291
+Episode: 293
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 292       |
+|    fps             | 21        |
+|    time_elapsed    | 40171     |
+|    total_timesteps | 844756    |
+| train/             |           |
+|    actor_loss      | -11.7     |
+|    critic_loss     | 0.196     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 844655    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 294
+State shape on reset: 291
+Episode: 295
+State shape on reset: 291
+Episode: 296
+State shape on reset: 291
+Episode: 297
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 296       |
+|    fps             | 21        |
+|    time_elapsed    | 40730     |
+|    total_timesteps | 856328    |
+| train/             |           |
+|    actor_loss      | -11.1     |
+|    critic_loss     | 0.297     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 856227    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 298
+State shape on reset: 291
+Episode: 299
+State shape on reset: 291
+Episode: 300
+day: 2892, episode: 300
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 301
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 300       |
+|    fps             | 21        |
+|    time_elapsed    | 41284     |
+|    total_timesteps | 867900    |
+| train/             |           |
+|    actor_loss      | -13.3     |
+|    critic_loss     | 0.363     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 867799    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 302
+State shape on reset: 291
+Episode: 303
+State shape on reset: 291
+Episode: 304
+State shape on reset: 291
+Episode: 305
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 304       |
+|    fps             | 21        |
+|    time_elapsed    | 41838     |
+|    total_timesteps | 879472    |
+| train/             |           |
+|    actor_loss      | -11.3     |
+|    critic_loss     | 0.481     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 879371    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 306
+State shape on reset: 291
+Episode: 307
+State shape on reset: 291
+Episode: 308
+State shape on reset: 291
+Episode: 309
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 308       |
+|    fps             | 21        |
+|    time_elapsed    | 42392     |
+|    total_timesteps | 891044    |
+| train/             |           |
+|    actor_loss      | -11.8     |
+|    critic_loss     | 0.245     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 890943    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 310
+day: 2892, episode: 310
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 311
+State shape on reset: 291
+Episode: 312
+State shape on reset: 291
+Episode: 313
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 312       |
+|    fps             | 21        |
+|    time_elapsed    | 42948     |
+|    total_timesteps | 902616    |
+| train/             |           |
+|    actor_loss      | -12.6     |
+|    critic_loss     | 0.31      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 902515    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 314
+State shape on reset: 291
+Episode: 315
+State shape on reset: 291
+Episode: 316
+State shape on reset: 291
+Episode: 317
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 316       |
+|    fps             | 21        |
+|    time_elapsed    | 43504     |
+|    total_timesteps | 914188    |
+| train/             |           |
+|    actor_loss      | -15       |
+|    critic_loss     | 0.414     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 914087    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 318
+State shape on reset: 291
+Episode: 319
+State shape on reset: 291
+Episode: 320
+day: 2892, episode: 320
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 321
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 320       |
+|    fps             | 21        |
+|    time_elapsed    | 44060     |
+|    total_timesteps | 925760    |
+| train/             |           |
+|    actor_loss      | -14.2     |
+|    critic_loss     | 0.273     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 925659    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 322
+State shape on reset: 291
+Episode: 323
+State shape on reset: 291
+Episode: 324
+State shape on reset: 291
+Episode: 325
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 324       |
+|    fps             | 21        |
+|    time_elapsed    | 44617     |
+|    total_timesteps | 937332    |
+| train/             |           |
+|    actor_loss      | -13.8     |
+|    critic_loss     | 0.446     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 937231    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 326
+State shape on reset: 291
+Episode: 327
+State shape on reset: 291
+Episode: 328
+State shape on reset: 291
+Episode: 329
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 328       |
+|    fps             | 21        |
+|    time_elapsed    | 45173     |
+|    total_timesteps | 948904    |
+| train/             |           |
+|    actor_loss      | -12.6     |
+|    critic_loss     | 0.293     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 948803    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 330
+day: 2892, episode: 330
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 331
+State shape on reset: 291
+Episode: 332
+State shape on reset: 291
+Episode: 333
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 332       |
+|    fps             | 21        |
+|    time_elapsed    | 45729     |
+|    total_timesteps | 960476    |
+| train/             |           |
+|    actor_loss      | -12.9     |
+|    critic_loss     | 0.446     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 960375    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 334
+State shape on reset: 291
+Episode: 335
+State shape on reset: 291
+Episode: 336
+State shape on reset: 291
+Episode: 337
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 336       |
+|    fps             | 21        |
+|    time_elapsed    | 46284     |
+|    total_timesteps | 972048    |
+| train/             |           |
+|    actor_loss      | -14       |
+|    critic_loss     | 0.173     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 971947    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 338
+State shape on reset: 291
+Episode: 339
+State shape on reset: 291
+Episode: 340
+day: 2892, episode: 340
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 341
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 340       |
+|    fps             | 20        |
+|    time_elapsed    | 46849     |
+|    total_timesteps | 983620    |
+| train/             |           |
+|    actor_loss      | -13.6     |
+|    critic_loss     | 0.338     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 983519    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 342
+State shape on reset: 291
+Episode: 343
+State shape on reset: 291
+Episode: 344
+State shape on reset: 291
+Episode: 345
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 344       |
+|    fps             | 20        |
+|    time_elapsed    | 47408     |
+|    total_timesteps | 995192    |
+| train/             |           |
+|    actor_loss      | -12.6     |
+|    critic_loss     | 0.299     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 995091    |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 346
+State shape on reset: 291
+Episode: 347
+State shape on reset: 291
+Episode: 348
+State shape on reset: 291
+Episode: 349
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 348       |
+|    fps             | 20        |
+|    time_elapsed    | 47967     |
+|    total_timesteps | 1006764   |
+| train/             |           |
+|    actor_loss      | -14       |
+|    critic_loss     | 0.221     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1006663   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 350
+day: 2892, episode: 350
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 351
+State shape on reset: 291
+Episode: 352
+State shape on reset: 291
+Episode: 353
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 352       |
+|    fps             | 20        |
+|    time_elapsed    | 48525     |
+|    total_timesteps | 1018336   |
+| train/             |           |
+|    actor_loss      | -12.2     |
+|    critic_loss     | 0.249     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1018235   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 354
+State shape on reset: 291
+Episode: 355
+State shape on reset: 291
+Episode: 356
+State shape on reset: 291
+Episode: 357
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 356       |
+|    fps             | 20        |
+|    time_elapsed    | 49081     |
+|    total_timesteps | 1029908   |
+| train/             |           |
+|    actor_loss      | -13.4     |
+|    critic_loss     | 0.264     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1029807   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 358
+State shape on reset: 291
+Episode: 359
+State shape on reset: 291
+Episode: 360
+day: 2892, episode: 360
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 361
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 360       |
+|    fps             | 20        |
+|    time_elapsed    | 49638     |
+|    total_timesteps | 1041480   |
+| train/             |           |
+|    actor_loss      | -13.1     |
+|    critic_loss     | 0.272     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1041379   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 362
+State shape on reset: 291
+Episode: 363
+State shape on reset: 291
+Episode: 364
+State shape on reset: 291
+Episode: 365
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 364       |
+|    fps             | 20        |
+|    time_elapsed    | 50194     |
+|    total_timesteps | 1053052   |
+| train/             |           |
+|    actor_loss      | -12.5     |
+|    critic_loss     | 0.168     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1052951   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 366
+State shape on reset: 291
+Episode: 367
+State shape on reset: 291
+Episode: 368
+State shape on reset: 291
+Episode: 369
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 368       |
+|    fps             | 20        |
+|    time_elapsed    | 50748     |
+|    total_timesteps | 1064624   |
+| train/             |           |
+|    actor_loss      | -12.9     |
+|    critic_loss     | 0.263     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1064523   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 370
+day: 2892, episode: 370
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 371
+State shape on reset: 291
+Episode: 372
+State shape on reset: 291
+Episode: 373
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 372       |
+|    fps             | 20        |
+|    time_elapsed    | 51302     |
+|    total_timesteps | 1076196   |
+| train/             |           |
+|    actor_loss      | -13.5     |
+|    critic_loss     | 0.283     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1076095   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 374
+State shape on reset: 291
+Episode: 375
+State shape on reset: 291
+Episode: 376
+State shape on reset: 291
+Episode: 377
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 376       |
+|    fps             | 20        |
+|    time_elapsed    | 51856     |
+|    total_timesteps | 1087768   |
+| train/             |           |
+|    actor_loss      | -13       |
+|    critic_loss     | 0.263     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1087667   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 378
+State shape on reset: 291
+Episode: 379
+State shape on reset: 291
+Episode: 380
+day: 2892, episode: 380
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 381
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 380       |
+|    fps             | 20        |
+|    time_elapsed    | 52410     |
+|    total_timesteps | 1099340   |
+| train/             |           |
+|    actor_loss      | -11.6     |
+|    critic_loss     | 0.228     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1099239   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 382
+State shape on reset: 291
+Episode: 383
+State shape on reset: 291
+Episode: 384
+State shape on reset: 291
+Episode: 385
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 384       |
+|    fps             | 20        |
+|    time_elapsed    | 52966     |
+|    total_timesteps | 1110912   |
+| train/             |           |
+|    actor_loss      | -13.8     |
+|    critic_loss     | 0.336     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1110811   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 386
+State shape on reset: 291
+Episode: 387
+State shape on reset: 291
+Episode: 388
+State shape on reset: 291
+Episode: 389
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 388       |
+|    fps             | 20        |
+|    time_elapsed    | 53521     |
+|    total_timesteps | 1122484   |
+| train/             |           |
+|    actor_loss      | -12.2     |
+|    critic_loss     | 0.139     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1122383   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 390
+day: 2892, episode: 390
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 391
+State shape on reset: 291
+Episode: 392
+State shape on reset: 291
+Episode: 393
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 392       |
+|    fps             | 20        |
+|    time_elapsed    | 54084     |
+|    total_timesteps | 1134056   |
+| train/             |           |
+|    actor_loss      | -13.6     |
+|    critic_loss     | 0.253     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1133955   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 394
+State shape on reset: 291
+Episode: 395
+State shape on reset: 291
+Episode: 396
+State shape on reset: 291
+Episode: 397
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 396       |
+|    fps             | 20        |
+|    time_elapsed    | 54639     |
+|    total_timesteps | 1145628   |
+| train/             |           |
+|    actor_loss      | -10.9     |
+|    critic_loss     | 0.228     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1145527   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 398
+State shape on reset: 291
+Episode: 399
+State shape on reset: 291
+Episode: 400
+day: 2892, episode: 400
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 401
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 400       |
+|    fps             | 20        |
+|    time_elapsed    | 55195     |
+|    total_timesteps | 1157200   |
+| train/             |           |
+|    actor_loss      | -11.3     |
+|    critic_loss     | 0.155     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1157099   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 402
+State shape on reset: 291
+Episode: 403
+State shape on reset: 291
+Episode: 404
+State shape on reset: 291
+Episode: 405
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 404       |
+|    fps             | 20        |
+|    time_elapsed    | 55752     |
+|    total_timesteps | 1168772   |
+| train/             |           |
+|    actor_loss      | -12.1     |
+|    critic_loss     | 0.404     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1168671   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 406
+State shape on reset: 291
+Episode: 407
+State shape on reset: 291
+Episode: 408
+State shape on reset: 291
+Episode: 409
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 408       |
+|    fps             | 20        |
+|    time_elapsed    | 56309     |
+|    total_timesteps | 1180344   |
+| train/             |           |
+|    actor_loss      | -15       |
+|    critic_loss     | 0.217     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1180243   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 410
+day: 2892, episode: 410
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 411
+State shape on reset: 291
+Episode: 412
+State shape on reset: 291
+Episode: 413
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 412       |
+|    fps             | 20        |
+|    time_elapsed    | 56865     |
+|    total_timesteps | 1191916   |
+| train/             |           |
+|    actor_loss      | -11.9     |
+|    critic_loss     | 0.311     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1191815   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 414
+State shape on reset: 291
+Episode: 415
+State shape on reset: 291
+Episode: 416
+State shape on reset: 291
+Episode: 417
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 416       |
+|    fps             | 20        |
+|    time_elapsed    | 57420     |
+|    total_timesteps | 1203488   |
+| train/             |           |
+|    actor_loss      | -14       |
+|    critic_loss     | 0.333     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1203387   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 418
+State shape on reset: 291
+Episode: 419
+State shape on reset: 291
+Episode: 420
+day: 2892, episode: 420
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 421
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 420       |
+|    fps             | 20        |
+|    time_elapsed    | 57976     |
+|    total_timesteps | 1215060   |
+| train/             |           |
+|    actor_loss      | -14.8     |
+|    critic_loss     | 0.142     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1214959   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 422
+State shape on reset: 291
+Episode: 423
+State shape on reset: 291
+Episode: 424
+State shape on reset: 291
+Episode: 425
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 424       |
+|    fps             | 20        |
+|    time_elapsed    | 58535     |
+|    total_timesteps | 1226632   |
+| train/             |           |
+|    actor_loss      | -14.1     |
+|    critic_loss     | 0.207     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1226531   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 426
+State shape on reset: 291
+Episode: 427
+State shape on reset: 291
+Episode: 428
+State shape on reset: 291
+Episode: 429
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 428       |
+|    fps             | 20        |
+|    time_elapsed    | 59094     |
+|    total_timesteps | 1238204   |
+| train/             |           |
+|    actor_loss      | -14.6     |
+|    critic_loss     | 0.231     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1238103   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 430
+day: 2892, episode: 430
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 431
+State shape on reset: 291
+Episode: 432
+State shape on reset: 291
+Episode: 433
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 432       |
+|    fps             | 20        |
+|    time_elapsed    | 59651     |
+|    total_timesteps | 1249776   |
+| train/             |           |
+|    actor_loss      | -10.7     |
+|    critic_loss     | 0.193     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1249675   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 434
+State shape on reset: 291
+Episode: 435
+State shape on reset: 291
+Episode: 436
+State shape on reset: 291
+Episode: 437
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 436       |
+|    fps             | 20        |
+|    time_elapsed    | 60208     |
+|    total_timesteps | 1261348   |
+| train/             |           |
+|    actor_loss      | -12.6     |
+|    critic_loss     | 0.266     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1261247   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 438
+State shape on reset: 291
+Episode: 439
+State shape on reset: 291
+Episode: 440
+day: 2892, episode: 440
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 441
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 440       |
+|    fps             | 20        |
+|    time_elapsed    | 60764     |
+|    total_timesteps | 1272920   |
+| train/             |           |
+|    actor_loss      | -13.4     |
+|    critic_loss     | 0.181     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1272819   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 442
+State shape on reset: 291
+Episode: 443
+State shape on reset: 291
+Episode: 444
+State shape on reset: 291
+Episode: 445
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 444       |
+|    fps             | 20        |
+|    time_elapsed    | 61323     |
+|    total_timesteps | 1284492   |
+| train/             |           |
+|    actor_loss      | -14.7     |
+|    critic_loss     | 0.143     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1284391   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 446
+State shape on reset: 291
+Episode: 447
+State shape on reset: 291
+Episode: 448
+State shape on reset: 291
+Episode: 449
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 448       |
+|    fps             | 20        |
+|    time_elapsed    | 61891     |
+|    total_timesteps | 1296064   |
+| train/             |           |
+|    actor_loss      | -14.3     |
+|    critic_loss     | 0.186     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1295963   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 450
+day: 2892, episode: 450
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 451
+State shape on reset: 291
+Episode: 452
+State shape on reset: 291
+Episode: 453
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 452       |
+|    fps             | 20        |
+|    time_elapsed    | 62450     |
+|    total_timesteps | 1307636   |
+| train/             |           |
+|    actor_loss      | -11.4     |
+|    critic_loss     | 0.331     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1307535   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 454
+State shape on reset: 291
+Episode: 455
+State shape on reset: 291
+Episode: 456
+State shape on reset: 291
+Episode: 457
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 456       |
+|    fps             | 20        |
+|    time_elapsed    | 63007     |
+|    total_timesteps | 1319208   |
+| train/             |           |
+|    actor_loss      | -9.48     |
+|    critic_loss     | 0.156     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1319107   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 458
+State shape on reset: 291
+Episode: 459
+State shape on reset: 291
+Episode: 460
+day: 2892, episode: 460
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 461
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 460       |
+|    fps             | 20        |
+|    time_elapsed    | 63562     |
+|    total_timesteps | 1330780   |
+| train/             |           |
+|    actor_loss      | -14.6     |
+|    critic_loss     | 0.215     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1330679   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 462
+State shape on reset: 291
+Episode: 463
+State shape on reset: 291
+Episode: 464
+State shape on reset: 291
+Episode: 465
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 464       |
+|    fps             | 20        |
+|    time_elapsed    | 64118     |
+|    total_timesteps | 1342352   |
+| train/             |           |
+|    actor_loss      | -14.8     |
+|    critic_loss     | 0.293     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1342251   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 466
+State shape on reset: 291
+Episode: 467
+State shape on reset: 291
+Episode: 468
+State shape on reset: 291
+Episode: 469
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 468       |
+|    fps             | 20        |
+|    time_elapsed    | 64674     |
+|    total_timesteps | 1353924   |
+| train/             |           |
+|    actor_loss      | -13       |
+|    critic_loss     | 0.252     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1353823   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 470
+day: 2892, episode: 470
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 471
+State shape on reset: 291
+Episode: 472
+State shape on reset: 291
+Episode: 473
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 472       |
+|    fps             | 20        |
+|    time_elapsed    | 65231     |
+|    total_timesteps | 1365496   |
+| train/             |           |
+|    actor_loss      | -12.3     |
+|    critic_loss     | 0.299     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1365395   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 474
+State shape on reset: 291
+Episode: 475
+State shape on reset: 291
+Episode: 476
+State shape on reset: 291
+Episode: 477
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 476       |
+|    fps             | 20        |
+|    time_elapsed    | 65787     |
+|    total_timesteps | 1377068   |
+| train/             |           |
+|    actor_loss      | -14.7     |
+|    critic_loss     | 0.198     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1376967   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 478
+State shape on reset: 291
+Episode: 479
+State shape on reset: 291
+Episode: 480
+day: 2892, episode: 480
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 481
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 480       |
+|    fps             | 20        |
+|    time_elapsed    | 66343     |
+|    total_timesteps | 1388640   |
+| train/             |           |
+|    actor_loss      | -14.2     |
+|    critic_loss     | 0.148     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1388539   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 482
+State shape on reset: 291
+Episode: 483
+State shape on reset: 291
+Episode: 484
+State shape on reset: 291
+Episode: 485
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 484       |
+|    fps             | 20        |
+|    time_elapsed    | 66900     |
+|    total_timesteps | 1400212   |
+| train/             |           |
+|    actor_loss      | -14.2     |
+|    critic_loss     | 0.276     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1400111   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 486
+State shape on reset: 291
+Episode: 487
+State shape on reset: 291
+Episode: 488
+State shape on reset: 291
+Episode: 489
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 488       |
+|    fps             | 20        |
+|    time_elapsed    | 67457     |
+|    total_timesteps | 1411784   |
+| train/             |           |
+|    actor_loss      | -11       |
+|    critic_loss     | 0.259     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1411683   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 490
+day: 2892, episode: 490
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 491
+State shape on reset: 291
+Episode: 492
+State shape on reset: 291
+Episode: 493
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 492       |
+|    fps             | 20        |
+|    time_elapsed    | 68017     |
+|    total_timesteps | 1423356   |
+| train/             |           |
+|    actor_loss      | -10.3     |
+|    critic_loss     | 0.524     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1423255   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 494
+State shape on reset: 291
+Episode: 495
+State shape on reset: 291
+Episode: 496
+State shape on reset: 291
+Episode: 497
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 496       |
+|    fps             | 20        |
+|    time_elapsed    | 68575     |
+|    total_timesteps | 1434928   |
+| train/             |           |
+|    actor_loss      | -13.8     |
+|    critic_loss     | 0.255     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1434827   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 498
+State shape on reset: 291
+Episode: 499
+State shape on reset: 291
+Episode: 500
+day: 2892, episode: 500
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 501
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 500       |
+|    fps             | 20        |
+|    time_elapsed    | 69130     |
+|    total_timesteps | 1446500   |
+| train/             |           |
+|    actor_loss      | -11.9     |
+|    critic_loss     | 0.159     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1446399   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 502
+State shape on reset: 291
+Episode: 503
+State shape on reset: 291
+Episode: 504
+State shape on reset: 291
+Episode: 505
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 504       |
+|    fps             | 20        |
+|    time_elapsed    | 69695     |
+|    total_timesteps | 1458072   |
+| train/             |           |
+|    actor_loss      | -11.4     |
+|    critic_loss     | 0.343     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1457971   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 506
+State shape on reset: 291
+Episode: 507
+State shape on reset: 291
+Episode: 508
+State shape on reset: 291
+Episode: 509
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 508       |
+|    fps             | 20        |
+|    time_elapsed    | 70250     |
+|    total_timesteps | 1469644   |
+| train/             |           |
+|    actor_loss      | -11.2     |
+|    critic_loss     | 0.333     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1469543   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 510
+day: 2892, episode: 510
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 511
+State shape on reset: 291
+Episode: 512
+State shape on reset: 291
+Episode: 513
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 512       |
+|    fps             | 20        |
+|    time_elapsed    | 70804     |
+|    total_timesteps | 1481216   |
+| train/             |           |
+|    actor_loss      | -12.6     |
+|    critic_loss     | 1.73      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1481115   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 514
+State shape on reset: 291
+Episode: 515
+State shape on reset: 291
+Episode: 516
+State shape on reset: 291
+Episode: 517
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 516       |
+|    fps             | 20        |
+|    time_elapsed    | 71359     |
+|    total_timesteps | 1492788   |
+| train/             |           |
+|    actor_loss      | -14.7     |
+|    critic_loss     | 0.277     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1492687   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 518
+State shape on reset: 291
+Episode: 519
+State shape on reset: 291
+Episode: 520
+day: 2892, episode: 520
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 521
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 520       |
+|    fps             | 20        |
+|    time_elapsed    | 71915     |
+|    total_timesteps | 1504360   |
+| train/             |           |
+|    actor_loss      | -14.1     |
+|    critic_loss     | 0.307     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1504259   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 522
+State shape on reset: 291
+Episode: 523
+State shape on reset: 291
+Episode: 524
+State shape on reset: 291
+Episode: 525
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 524       |
+|    fps             | 20        |
+|    time_elapsed    | 72475     |
+|    total_timesteps | 1515932   |
+| train/             |           |
+|    actor_loss      | -12       |
+|    critic_loss     | 0.147     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1515831   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 526
+State shape on reset: 291
+Episode: 527
+State shape on reset: 291
+Episode: 528
+State shape on reset: 291
+Episode: 529
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 528       |
+|    fps             | 20        |
+|    time_elapsed    | 73035     |
+|    total_timesteps | 1527504   |
+| train/             |           |
+|    actor_loss      | -14.9     |
+|    critic_loss     | 0.28      |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1527403   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 530
+day: 2892, episode: 530
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 531
+State shape on reset: 291
+Episode: 532
+State shape on reset: 291
+Episode: 533
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 532       |
+|    fps             | 20        |
+|    time_elapsed    | 73594     |
+|    total_timesteps | 1539076   |
+| train/             |           |
+|    actor_loss      | -10.6     |
+|    critic_loss     | 0.188     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1538975   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 534
+State shape on reset: 291
+Episode: 535
+State shape on reset: 291
+Episode: 536
+State shape on reset: 291
+Episode: 537
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 536       |
+|    fps             | 20        |
+|    time_elapsed    | 74151     |
+|    total_timesteps | 1550648   |
+| train/             |           |
+|    actor_loss      | -12.8     |
+|    critic_loss     | 0.124     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1550547   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 538
+State shape on reset: 291
+Episode: 539
+State shape on reset: 291
+Episode: 540
+day: 2892, episode: 540
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 541
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 540       |
+|    fps             | 20        |
+|    time_elapsed    | 74707     |
+|    total_timesteps | 1562220   |
+| train/             |           |
+|    actor_loss      | -15       |
+|    critic_loss     | 0.157     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1562119   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 542
+State shape on reset: 291
+Episode: 543
+State shape on reset: 291
+Episode: 544
+State shape on reset: 291
+Episode: 545
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 544       |
+|    fps             | 20        |
+|    time_elapsed    | 75263     |
+|    total_timesteps | 1573792   |
+| train/             |           |
+|    actor_loss      | -13.5     |
+|    critic_loss     | 0.182     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1573691   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 546
+State shape on reset: 291
+Episode: 547
+State shape on reset: 291
+Episode: 548
+State shape on reset: 291
+Episode: 549
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 548       |
+|    fps             | 20        |
+|    time_elapsed    | 75819     |
+|    total_timesteps | 1585364   |
+| train/             |           |
+|    actor_loss      | -12       |
+|    critic_loss     | 0.367     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1585263   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 550
+day: 2892, episode: 550
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 551
+State shape on reset: 291
+Episode: 552
+State shape on reset: 291
+Episode: 553
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 552       |
+|    fps             | 20        |
+|    time_elapsed    | 76374     |
+|    total_timesteps | 1596936   |
+| train/             |           |
+|    actor_loss      | -11.9     |
+|    critic_loss     | 0.291     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1596835   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 554
+State shape on reset: 291
+Episode: 555
+State shape on reset: 291
+Episode: 556
+State shape on reset: 291
+Episode: 557
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 556       |
+|    fps             | 20        |
+|    time_elapsed    | 76930     |
+|    total_timesteps | 1608508   |
+| train/             |           |
+|    actor_loss      | -14.8     |
+|    critic_loss     | 0.185     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1608407   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 558
+State shape on reset: 291
+Episode: 559
+State shape on reset: 291
+Episode: 560
+day: 2892, episode: 560
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 561
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 560       |
+|    fps             | 20        |
+|    time_elapsed    | 77485     |
+|    total_timesteps | 1620080   |
+| train/             |           |
+|    actor_loss      | -13.1     |
+|    critic_loss     | 0.247     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1619979   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 562
+State shape on reset: 291
+Episode: 563
+State shape on reset: 291
+Episode: 564
+State shape on reset: 291
+Episode: 565
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 564       |
+|    fps             | 20        |
+|    time_elapsed    | 78041     |
+|    total_timesteps | 1631652   |
+| train/             |           |
+|    actor_loss      | -13.3     |
+|    critic_loss     | 0.251     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1631551   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 566
+State shape on reset: 291
+Episode: 567
+State shape on reset: 291
+Episode: 568
+State shape on reset: 291
+Episode: 569
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 568       |
+|    fps             | 20        |
+|    time_elapsed    | 78608     |
+|    total_timesteps | 1643224   |
+| train/             |           |
+|    actor_loss      | -12.4     |
+|    critic_loss     | 0.234     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1643123   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 570
+day: 2892, episode: 570
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 571
+State shape on reset: 291
+Episode: 572
+State shape on reset: 291
+Episode: 573
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 572       |
+|    fps             | 20        |
+|    time_elapsed    | 79164     |
+|    total_timesteps | 1654796   |
+| train/             |           |
+|    actor_loss      | -12.7     |
+|    critic_loss     | 0.487     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1654695   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 574
+State shape on reset: 291
+Episode: 575
+State shape on reset: 291
+Episode: 576
+State shape on reset: 291
+Episode: 577
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 576       |
+|    fps             | 20        |
+|    time_elapsed    | 79720     |
+|    total_timesteps | 1666368   |
+| train/             |           |
+|    actor_loss      | -13.7     |
+|    critic_loss     | 0.276     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1666267   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 578
+State shape on reset: 291
+Episode: 579
+State shape on reset: 291
+Episode: 580
+day: 2892, episode: 580
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 581
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 580       |
+|    fps             | 20        |
+|    time_elapsed    | 80277     |
+|    total_timesteps | 1677940   |
+| train/             |           |
+|    actor_loss      | -13.2     |
+|    critic_loss     | 0.277     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1677839   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 582
+State shape on reset: 291
+Episode: 583
+State shape on reset: 291
+Episode: 584
+State shape on reset: 291
+Episode: 585
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 584       |
+|    fps             | 20        |
+|    time_elapsed    | 80834     |
+|    total_timesteps | 1689512   |
+| train/             |           |
+|    actor_loss      | -12.1     |
+|    critic_loss     | 0.323     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1689411   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 586
+State shape on reset: 291
+Episode: 587
+State shape on reset: 291
+Episode: 588
+State shape on reset: 291
+Episode: 589
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 588       |
+|    fps             | 20        |
+|    time_elapsed    | 81389     |
+|    total_timesteps | 1701084   |
+| train/             |           |
+|    actor_loss      | -12.2     |
+|    critic_loss     | 0.433     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1700983   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 590
+day: 2892, episode: 590
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 591
+State shape on reset: 291
+Episode: 592
+State shape on reset: 291
+Episode: 593
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 592       |
+|    fps             | 20        |
+|    time_elapsed    | 81943     |
+|    total_timesteps | 1712656   |
+| train/             |           |
+|    actor_loss      | -12.2     |
+|    critic_loss     | 0.495     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1712555   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 594
+State shape on reset: 291
+Episode: 595
+State shape on reset: 291
+Episode: 596
+State shape on reset: 291
+Episode: 597
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 596       |
+|    fps             | 20        |
+|    time_elapsed    | 82497     |
+|    total_timesteps | 1724228   |
+| train/             |           |
+|    actor_loss      | -13.8     |
+|    critic_loss     | 0.492     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1724127   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 598
+State shape on reset: 291
+Episode: 599
+State shape on reset: 291
+Episode: 600
+day: 2892, episode: 600
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 601
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 600       |
+|    fps             | 20        |
+|    time_elapsed    | 83051     |
+|    total_timesteps | 1735800   |
+| train/             |           |
+|    actor_loss      | -12.2     |
+|    critic_loss     | 0.359     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1735699   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 602
+State shape on reset: 291
+Episode: 603
+State shape on reset: 291
+Episode: 604
+State shape on reset: 291
+Episode: 605
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 604       |
+|    fps             | 20        |
+|    time_elapsed    | 83604     |
+|    total_timesteps | 1747372   |
+| train/             |           |
+|    actor_loss      | -13.2     |
+|    critic_loss     | 0.327     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1747271   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 606
+State shape on reset: 291
+Episode: 607
+State shape on reset: 291
+Episode: 608
+State shape on reset: 291
+Episode: 609
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 608       |
+|    fps             | 20        |
+|    time_elapsed    | 84160     |
+|    total_timesteps | 1758944   |
+| train/             |           |
+|    actor_loss      | -12.4     |
+|    critic_loss     | 0.186     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1758843   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 610
+day: 2892, episode: 610
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 611
+State shape on reset: 291
+Episode: 612
+State shape on reset: 291
+Episode: 613
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 612       |
+|    fps             | 20        |
+|    time_elapsed    | 84715     |
+|    total_timesteps | 1770516   |
+| train/             |           |
+|    actor_loss      | -12.3     |
+|    critic_loss     | 0.338     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1770415   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 614
+State shape on reset: 291
+Episode: 615
+State shape on reset: 291
+Episode: 616
+State shape on reset: 291
+Episode: 617
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 616       |
+|    fps             | 20        |
+|    time_elapsed    | 85272     |
+|    total_timesteps | 1782088   |
+| train/             |           |
+|    actor_loss      | -13.3     |
+|    critic_loss     | 0.233     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1781987   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------
+Episode: 618
+State shape on reset: 291
+Episode: 619
+State shape on reset: 291
+Episode: 620
+day: 2892, episode: 620
+begin_total_asset: 1000000.00
+end_total_asset: 4744219.85
+total_reward: 3744219.85
+total_cost: 1065.26
+total_trades: 49164
+Sharpe: 0.794
+=================================
+State shape on reset: 291
+Episode: 621
+State shape on reset: 291
+----------------------------------
+| time/              |           |
+|    episodes        | 620       |
+|    fps             | 20        |
+|    time_elapsed    | 85832     |
+|    total_timesteps | 1793660   |
+| train/             |           |
+|    actor_loss      | -11.4     |
+|    critic_loss     | 0.254     |
+|    learning_rate   | 0.001     |
+|    n_updates       | 1793559   |
+|    reward          | 6.8364687 |
+|    reward_max      | 41.56433  |
+|    reward_mean     | 0.132     |
+|    reward_min      | -53.40141 |
+----------------------------------

@@ -1,0 +1,77 @@
+#########################BEGIN-PROLOG#########################
+JobName   = DRLAgentTraining
+Account   = csc790
+NodeList  = cpu-amd-06
+Resources = cpu=5,mem=102G,node=1,billing=8
+WorkDir   = /deac/csc/classes/csc790-sp-2025/jianb21/Ensemble_stockTrading_2020/slurm
+###########################END-PROLOG#########################
+CONFIGURED TRAIN PERIOD: 2009-01-02 to 2020-06-30
+ACTUAL TRAIN DATA RANGE: 2009-01-02 to 2020-06-30
+
+CONFIGURED TEST PERIOD:  2020-07-01 to 2021-10-27
+ACTUAL TEST DATA RANGE:  2020-07-01 to 2021-10-27
+
+State shape on reset: 291
+{'n_steps': 16, 'ent_coef': 0.1, 'learning_rate': 5e-05, 'max_grad_norm': 0.1, 'vf_coef': 0.25}
+Using cpu device
+Logging to /deac/csc/classes/csc790/jianb21/Ensemble_stockTrading_2020/results/a2c
+State shape on reset: 291
+----------------------------------------
+| time/                 |              |
+|    fps                | 242          |
+|    iterations         | 100          |
+|    time_elapsed       | 6            |
+|    total_timesteps    | 1600         |
+| train/                |              |
+|    entropy_loss       | -41.2        |
+|    explained_variance | 0.0367       |
+|    learning_rate      | 5e-05        |
+|    n_updates          | 99           |
+|    policy_loss        | 25.7         |
+|    reward             | -0.040783517 |
+|    reward_max         | 4.0344033    |
+|    reward_mean        | -0.0261      |
+|    reward_min         | -2.7583983   |
+|    std                | 1            |
+|    value_loss         | 2.95         |
+----------------------------------------
+Episode: 2
+State shape on reset: 291
+---------------------------------------
+| time/                 |             |
+|    fps                | 243         |
+|    iterations         | 200         |
+|    time_elapsed       | 13          |
+|    total_timesteps    | 3200        |
+| train/                |             |
+|    entropy_loss       | -41.2       |
+|    explained_variance | 0.0868      |
+|    learning_rate      | 5e-05       |
+|    n_updates          | 199         |
+|    policy_loss        | 97.7        |
+|    reward             | -0.68941545 |
+|    reward_max         | 1.6200304   |
+|    reward_mean        | 0.36        |
+|    reward_min         | -0.68941545 |
+|    std                | 1           |
+|    value_loss         | 7.88        |
+---------------------------------------
+--------------------------------------
+| time/                 |            |
+|    fps                | 244        |
+|    iterations         | 300        |
+|    time_elapsed       | 19         |
+|    total_timesteps    | 4800       |
+| train/                |            |
+|    entropy_loss       | -41.2      |
+|    explained_variance | -0.0541    |
+|    learning_rate      | 5e-05      |
+|    n_updates          | 299        |
+|    policy_loss        | 353        |
+|    reward             | 0.5270219  |
+|    reward_max         | 2.3760293  |
+|    reward_mean        | 0.402      |
+|    reward_min         | -1.1260085 |
+|    std                | 1          |
+|    value_loss         | 86.6       |
+--------------------------------------

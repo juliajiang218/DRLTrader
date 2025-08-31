@@ -1,8 +1,8 @@
 """
 Disclaimer:
 This file contains the DRLAgent class, which is a custom agent for training reinforcement learning agents to trade stocks.
-Code: This implementation borrows code from https://github.com/AI4Finance-Foundation/FinRL/blob/master/finrl/agents/stablebaselines3/models.py
-The code has been modified to better fit the purpose of this project.
+Code: This implementation borrows code from https://github.com/AI4Finance-Foundation/FinRL/blob/master/finrl/meta/agent/drl_agent.py
+
 It is used to train the agents in the DRLAgent class. 
 For educational purposes only.
 """
@@ -31,7 +31,7 @@ from stable_baselines3.common.noise import OrnsteinUhlenbeckActionNoise
 from stable_baselines3.common.vec_env import DummyVecEnv
 
 from finrl import config
-from env_stock_trading import StockTradingEnv
+from EnvTrade.env_trading import StockTradingEnv
 # from preprocessor.preprocessors import data_split
 
 # predefined models, the agent can only be trained with any of these models
@@ -521,4 +521,3 @@ def demo_a2c_training():
 if __name__ == "__main__":
     # Run the demo
     demo_a2c_training()
-    

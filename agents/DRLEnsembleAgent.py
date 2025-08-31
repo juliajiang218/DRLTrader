@@ -4,6 +4,11 @@ This file contains the DRLEnsembleAgent class, which is a custom ensemble agent 
 Code: This implementation borrows code from https://github.com/AI4Finance-Foundation/FinRL/blob/master/finrl/agents/stablebaselines3/models.py
 
 It is used to train the agents in the DRLAgent class. The script is modified to train agents in the customized DRLAgent class.
+
+Bug Fix (2024-07-25):
+- Logging in callbacks now checks for 'rollout_buffer' (on-policy algorithms like PPO/A2C) or 'replay_buffer' (off-policy algorithms like DDPG/TD3/SAC).
+- This prevents errors and ensures correct reward logging for all supported algorithms.
+
 For educational purposes only.
 """
 from __future__ import annotations
@@ -64,16 +69,26 @@ class TensorboardCallback(BaseCallback):
 
     def _on_rollout_end(self) -> bool:
         try:
-            rollout_buffer_rewards = self.locals["rollout_buffer"].rewards.flatten()
-            self.logger.record(
-                key="train/reward_min", value=min(rollout_buffer_rewards)
-            )
-            self.logger.record(
-                key="train/reward_mean", value=statistics.mean(rollout_buffer_rewards)
-            )
-            self.logger.record(
-                key="train/reward_max", value=max(rollout_buffer_rewards)
-            )
+            if hasattr(self.model, "rollout_buffer"):
+                # On-policy: PPO, A2C, etc.
+                rewards = self.model.rollout_buffer.rewards.flatten()
+            elif hasattr(self.model, "replay_buffer"):
+                # Off-policy: DDPG, TD3, SAC, etc.
+                # You may want to sample or summarize from the replay buffer
+                # For example, log the most recent batch of rewards
+                rewards = self.model.replay_buffer.rewards.flatten()
+                # print(f"Rewards added to ddpg csv: {rewards}\n")
+            else:
+                rewards = None
+
+            if rewards is not None and len(rewards) > 0:
+                self.logger.record("train/reward_min", min(rewards))
+                self.logger.record("train/reward_mean", float(sum(rewards)) / len(rewards))
+                self.logger.record("train/reward_max", max(rewards))
+            else:
+                self.logger.record("train/reward_min", None)
+                self.logger.record("train/reward_mean", None)
+                self.logger.record("train/reward_max", None)
         except BaseException as error:
             # Handle the case where "rewards" is not found
             self.logger.record(key="train/reward_min", value=None)
@@ -93,6 +108,7 @@ class DRLEnsembleAgent:
         model_kwargs=None,
         seed=None,
         verbose=1,
+        iteration=None,
     ):
         if model_name not in MODELS:
             raise ValueError(
@@ -110,10 +126,16 @@ class DRLEnsembleAgent:
                 temp_model_kwargs["action_noise"]
             ](mean=np.zeros(n_actions), sigma=0.1 * np.ones(n_actions))
         print(temp_model_kwargs)
+        # Create iteration-specific tensorboard log directory
+        if iteration is not None:
+            tensorboard_path = f"{config.TENSORBOARD_LOG_DIR}/{model_name}_{iteration}"
+        else:
+            tensorboard_path = f"{config.TENSORBOARD_LOG_DIR}/{model_name}"
+            
         return MODELS[model_name](
             policy=policy,
             env=env,
-            tensorboard_log=f"{config.TENSORBOARD_LOG_DIR}/{model_name}",
+            tensorboard_log=tensorboard_path,
             verbose=verbose,
             policy_kwargs=policy_kwargs,
             seed=seed,
@@ -163,6 +185,82 @@ class DRLEnsembleAgent:
                 * df_total_value["daily_return"].mean()
                 / df_total_value["daily_return"].std()
             )
+
+    @staticmethod
+    def calculate_directional_accuracy(iteration, model_name):
+        """Calculate directional accuracy - how often the model predicts price direction correctly"""
+        try:
+            # Load actions and account values
+            df_actions = pd.read_csv(f"results/actions_validation_{model_name}_{iteration}.csv")
+            df_account = pd.read_csv(f"results/account_value_validation_{model_name}_{iteration}.csv")
+            
+            # Calculate forward returns for each day
+            df_account['forward_return'] = df_account['account_value'].pct_change().shift(-1)
+            
+            # Calculate portfolio weight changes as a proxy for predicted direction
+            # Sum absolute actions as overall directional signal
+            portfolio_signal = df_actions.iloc[:, 1:].sum(axis=1)  # Skip date column
+            actual_returns = df_account['forward_return'].iloc[:-1]  # Drop last NaN
+            
+            # Align lengths
+            min_len = min(len(portfolio_signal), len(actual_returns))
+            portfolio_signal = portfolio_signal.iloc[:min_len]
+            actual_returns = actual_returns.iloc[:min_len]
+            
+            # Calculate directional accuracy
+            predicted_direction = np.sign(portfolio_signal)
+            actual_direction = np.sign(actual_returns)
+            
+            # Remove zero directions (no clear signal)
+            valid_mask = (predicted_direction != 0) & (actual_direction != 0)
+            if valid_mask.sum() == 0:
+                return 0.5  # Random chance if no valid signals
+                
+            directional_accuracy = (predicted_direction[valid_mask] == actual_direction[valid_mask]).mean()
+            return directional_accuracy
+            
+        except Exception as e:
+            print(f"Error calculating directional accuracy for {model_name}_{iteration}: {e}")
+            return 0.5  # Return random chance on error
+    
+    @staticmethod
+    def calculate_information_coefficient(iteration, model_name):
+        """Calculate Information Coefficient - correlation between predictions and future returns"""
+        try:
+            # Load actions and account values
+            df_actions = pd.read_csv(f"results/actions_validation_{model_name}_{iteration}.csv")
+            df_account = pd.read_csv(f"results/account_value_validation_{model_name}_{iteration}.csv")
+            
+            # Calculate forward returns
+            df_account['forward_return'] = df_account['account_value'].pct_change().shift(-1)
+            
+            # Use sum of absolute actions as prediction signal
+            portfolio_signal = df_actions.iloc[:, 1:].sum(axis=1)  # Skip date column
+            actual_returns = df_account['forward_return'].iloc[:-1]  # Drop last NaN
+            
+            # Align lengths
+            min_len = min(len(portfolio_signal), len(actual_returns))
+            portfolio_signal = portfolio_signal.iloc[:min_len]
+            actual_returns = actual_returns.iloc[:min_len]
+            
+            # Remove NaN and infinite values
+            valid_mask = np.isfinite(portfolio_signal) & np.isfinite(actual_returns)
+            if valid_mask.sum() < 2:
+                return 0.0  # Need at least 2 points for correlation
+                
+            clean_signals = portfolio_signal[valid_mask]
+            clean_returns = actual_returns[valid_mask]
+            
+            # Calculate correlation (Information Coefficient)
+            if len(clean_signals) < 2 or clean_signals.std() == 0 or clean_returns.std() == 0:
+                return 0.0
+                
+            ic = np.corrcoef(clean_signals, clean_returns)[0, 1]
+            return ic if not np.isnan(ic) else 0.0
+            
+        except Exception as e:
+            print(f"Error calculating IC for {model_name}_{iteration}: {e}")
+            return 0.0  # Return 0 on error
 
     def __init__(
         self,
@@ -275,11 +373,11 @@ class DRLEnsembleAgent:
         Train the model for a single window.
         """
         if model_kwargs is None:
-            return None, sharpe_list, -1
+            return None, sharpe_list, -1, 0.5, 0.0
 
         print(f"======{model_name} Training========")
         model = self.get_model(
-            model_name, self.train_env, policy="MlpPolicy", model_kwargs=model_kwargs
+            model_name, self.train_env, policy="MlpPolicy", model_kwargs=model_kwargs, iteration=i
         )
         model = self.train_model(
             model,
@@ -323,10 +421,18 @@ class DRLEnsembleAgent:
             test_env=val_env,
             test_obs=val_obs,
         )
+        
+        # Calculate multiple performance metrics
         sharpe = self.get_validation_sharpe(i, model_name=model_name)
-        print(f"{model_name} Sharpe Ratio: ", sharpe)
+        directional_accuracy = self.calculate_directional_accuracy(i, model_name=model_name)
+        ic = self.calculate_information_coefficient(i, model_name=model_name)
+        
+        print(f"{model_name} Sharpe Ratio: {sharpe:.4f}")
+        print(f"{model_name} Directional Accuracy: {directional_accuracy:.4f}")
+        print(f"{model_name} Information Coefficient: {ic:.4f}")
+        
         sharpe_list.append(sharpe)
-        return model, sharpe_list, sharpe
+        return model, sharpe_list, sharpe, directional_accuracy, ic
 
     def run_ensemble_strategy(
         self,
@@ -342,8 +448,12 @@ class DRLEnsembleAgent:
             "ddpg": DDPG_model_kwargs
   
         }
-        # Model Sharpe Ratios
-        model_dct = {k: {"sharpe_list": [], "sharpe": -1} for k in MODELS.keys()}
+        # Model Performance Metrics
+        model_dct = {k: {
+            "sharpe_list": [], "sharpe": -1,
+            "directional_accuracy_list": [], "directional_accuracy": 0.5,
+            "ic_list": [], "ic": 0.0
+        } for k in MODELS.keys()}
 
         """Ensemble Strategy that combines A2C, PPO, DDPG"""
         print("============Start Ensemble Strategy============")
@@ -481,7 +591,7 @@ class DRLEnsembleAgent:
             # Train Each Model
             for model_name in MODELS.keys():
                 # Train The Model
-                model, sharpe_list, sharpe = self._train_window(
+                model, sharpe_list, sharpe, directional_accuracy, ic = self._train_window(
                     model_name,
                     kwargs[model_name],
                     model_dct[model_name]["sharpe_list"],
@@ -492,10 +602,16 @@ class DRLEnsembleAgent:
                     validation,
                     turbulence_threshold,
                 )
-                # Save the model's sharpe ratios, and the model itself
+                # Save all performance metrics
                 model_dct[model_name]["sharpe_list"] = sharpe_list
                 model_dct[model_name]["model"] = model
                 model_dct[model_name]["sharpe"] = sharpe
+                
+                # Store additional metrics
+                model_dct[model_name]["directional_accuracy_list"].append(directional_accuracy)
+                model_dct[model_name]["directional_accuracy"] = directional_accuracy
+                model_dct[model_name]["ic_list"].append(ic)
+                model_dct[model_name]["ic"] = ic
 
             print(
                 "======Best Model Retraining from: ",
@@ -556,7 +672,13 @@ class DRLEnsembleAgent:
                 model_use,
                 model_dct["a2c"]["sharpe_list"],
                 model_dct["ppo"]["sharpe_list"],
-                model_dct["ddpg"]["sharpe_list"]
+                model_dct["ddpg"]["sharpe_list"],
+                model_dct["a2c"]["directional_accuracy_list"],
+                model_dct["ppo"]["directional_accuracy_list"],
+                model_dct["ddpg"]["directional_accuracy_list"],
+                model_dct["a2c"]["ic_list"],
+                model_dct["ppo"]["ic_list"],
+                model_dct["ddpg"]["ic_list"]
             ]
         ).T
         df_summary.columns = [
@@ -566,7 +688,13 @@ class DRLEnsembleAgent:
             "Model Used",
             "A2C Sharpe",
             "PPO Sharpe",
-            "DDPG Sharpe"
+            "DDPG Sharpe",
+            "A2C Directional Accuracy",
+            "PPO Directional Accuracy",
+            "DDPG Directional Accuracy",
+            "A2C Information Coefficient",
+            "PPO Information Coefficient",
+            "DDPG Information Coefficient"
         ]
 
         return df_summary

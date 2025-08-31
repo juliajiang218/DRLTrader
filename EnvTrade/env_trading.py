@@ -1,18 +1,3 @@
-"""
-Disclaimer:
-This file contains the StockTradingEnv class, which is a custom environment for training reinforcement learning agents to trade stocks.
-Code: This implementation borrows code from https://github.com/AI4Finance-Foundation/FinRL/blob/master/finrl/meta/env_stock_trading/env_stocktrading.py
-
-It is used to train the agents in the DRLAgent class. 
-Core Purposes:
-Creates a simulated stock market, where RL agent can
-1. buy and sell stocks,
-2. learn from market feedback, collect rewards/losses,
-3. handle real-world trading constraints, like transaction costs, market volatility, etc.
-
-For educational purposes only.
-"""
-
 from __future__ import annotations
 
 from typing import List
@@ -34,6 +19,7 @@ matplotlib.use("Agg")
 class StockTradingEnv(gym.Env):
     """
     A stock trading environment for OpenAI gym
+
     Parameters:
         df (pandas.DataFrame): Dataframe containing data
         hmax (int): Maximum cash to be traded in each trade per asset.
@@ -73,26 +59,23 @@ class StockTradingEnv(gym.Env):
         self.day = day
         self.df = df
         self.stock_dim = stock_dim
-
-        # passed as env_kwargs in main.py
         self.hmax = hmax
         self.num_stock_shares = num_stock_shares
         self.initial_amount = initial_amount  # get the initial cash
         self.buy_cost_pct = buy_cost_pct
-        self.sell_cost_pct = sell_cost_pct 
+        self.sell_cost_pct = sell_cost_pct
         self.reward_scaling = reward_scaling
         self.state_space = state_space
-        self.action_space_size = action_space
-        self.tech_indicator_list = tech_indicator_list # initialized in FeatureEngineering class
-
-        # Define the action and observation spaces
-        self.action_space = spaces.Box(low=-1, high=1, shape=(self.action_space_size,))
+        self.action_space = action_space
+        self.tech_indicator_list = tech_indicator_list
+        self.action_space = spaces.Box(low=-1, high=1, shape=(self.action_space,))
         self.observation_space = spaces.Box(
             low=-np.inf, high=np.inf, shape=(self.state_space,)
         )
         
-        # Initialize the data for the current day
-        self.data = self.df.loc[self.day, :]
+        # Create proper day-based indexing for the dataframe
+        self._create_day_index()
+        self.data = self._get_day_data(self.day)
         self.terminal = False
         self.make_plots = make_plots
         self.print_verbosity = print_verbosity
@@ -112,7 +95,6 @@ class StockTradingEnv(gym.Env):
         self.cost = 0
         self.trades = 0
         self.episode = 0
-
         # memorize all the total balance change
         self.asset_memory = [
             self.initial_amount
@@ -132,34 +114,15 @@ class StockTradingEnv(gym.Env):
         self._seed()
 
     def _sell_stock(self, index, action):
-        """
-        Sell a stock based on the action and turbulence threshold.
-
-        Logic:
-        If self.turbulence exceedeed, sell all stocks.
-        Else, call _do_sell_normal() to sell a stock.
-        """
         def _do_sell_normal():
-            """
-            This is a nested function for normal conditions.
-            sell min(action, holdings)
-
-            Logic:
-            1. Check if stock is tradeable.
-
-            """
-            # state location: index + 2 * self.stock_dim + 1
-            # purpose: some stocks might be suspended, delisted, having trading halts
-            # if True, the stock is tradeable.
-            if (self.state[index + 2 * self.stock_dim + 1] != True):  
-                # FIXME: WHAT IS THIS? 
-                # check if the stock is able to sell, for simlicity we just add it in techical index
+            if (
+                self.state[index + 2 * self.stock_dim + 1] != True
+            ):  # check if the stock is able to sell, for simlicity we just add it in techical index
                 # if self.state[index + 1] > 0: # if we use price<0 to denote a stock is unable to trade in that day, the total asset calculation may be wrong for the price is unreasonable
-
-                # this gives holdings location and checks if you own share of this stock
+                # Sell only if the price is > 0 (no missing data in this particular date)
+                # perform sell action based on the sign of the action
                 if self.state[index + self.stock_dim + 1] > 0:
-
-                    # calculate shares to sell
+                    # Sell only if current asset is > 0
                     sell_num_shares = min(
                         abs(action), self.state[index + self.stock_dim + 1]
                     )
@@ -187,31 +150,20 @@ class StockTradingEnv(gym.Env):
 
         # perform sell action based on the sign of the action
         if self.turbulence_threshold is not None:
-
-            # emergency liquidation, sell everything immediately
             if self.turbulence >= self.turbulence_threshold:
-
-                
                 if self.state[index + 1] > 0:
-                    # FIXME: WHAT IS THIS? 
                     # Sell only if the price is > 0 (no missing data in this particular date)
                     # if turbulence goes over threshold, just clear out all positions
-                    
-                    #if you own shares
                     if self.state[index + self.stock_dim + 1] > 0:
                         # Sell only if current asset is > 0
-                        sell_num_shares = self.state[index + self.stock_dim + 1] # sell all shares
-                        
-                        # same calculation and state updates as normal sell
+                        sell_num_shares = self.state[index + self.stock_dim + 1]
                         sell_amount = (
                             self.state[index + 1]
                             * sell_num_shares
                             * (1 - self.sell_cost_pct[index])
                         )
-                       
+                        # update balance
                         self.state[0] += sell_amount
-
-                        # holdings = 0, sell everything
                         self.state[index + self.stock_dim + 1] = 0
                         self.cost += (
                             self.state[index + 1]
@@ -231,21 +183,7 @@ class StockTradingEnv(gym.Env):
         return sell_num_shares
 
     def _buy_stock(self, index, action):
-        """
-        Purchase stocks with affordability checks and crisis prevention.
-
-        Logic:
-        If no turbulence_threshold OR turbulence < threshold, _do_buy()
-        Else, reach crisis, block all buying.
-        """
-
         def _do_buy():
-            """
-            This is a nested function for normal conditions.
-
-            Logic:
-
-            """
             if (
                 self.state[index + 2 * self.stock_dim + 1] != True
             ):  # check if the stock is able to buy
@@ -294,30 +232,15 @@ class StockTradingEnv(gym.Env):
         plt.close()
 
     def step(self, actions):
-        """
-        This function takes an given actions list, and calculates:
-        1. total asset before trading,
-        2. executes trades based on given actions, after scaling them based on hmax,
-        3. sells stocks with negative values and buys stocks with positive values,
-        4. then moves the agent to the next day, gets the new day's data, updates states with new prices,
-        5. calculates the total asset after trading,
-        6. calculates the reward, based on reward_scaling * portfolio value change
-
-
-        returns: new states (self._update_state), reward, if episode is terminal, truncated is always False, empty list {}
-        """
-        # terminal condition is if day is at the last line of the given df's index
-        self.terminal = self.day >= len(self.df.index.unique()) - 1
-
+        self.terminal = self.day >= self.max_days - 1
         if self.terminal:
-            print(f"Episode: {self.episode}")
+            # print(f"Episode: {self.episode}")
             if self.make_plots:
                 self._make_plot()
             end_total_asset = self.state[0] + sum(
                 np.array(self.state[1 : (self.stock_dim + 1)])
                 * np.array(self.state[(self.stock_dim + 1) : (self.stock_dim * 2 + 1)])
             )
-
             df_total_value = pd.DataFrame(self.asset_memory)
             tot_reward = (
                 self.state[0]
@@ -391,24 +314,20 @@ class StockTradingEnv(gym.Env):
             return self.state, self.reward, self.terminal, False, {}
 
         else:
-
-            # 1. scale actions from [-1, 1] to actual share quantities
-            actions = actions * self.hmax  # hmax = 100, [-1, 1] becomes [-100, 100]
-            actions = actions.astype(int)  # convert into integer because we can't by fraction of shares
-            
+            actions = actions * self.hmax  # actions initially is scaled between 0 to 1
+            actions = actions.astype(
+                int
+            )  # convert into integer because we can't by fraction of shares
             if self.turbulence_threshold is not None:
                 if self.turbulence >= self.turbulence_threshold:
                     actions = np.array([-self.hmax] * self.stock_dim)
-
-            # 2. calculat total asset before trading
             begin_total_asset = self.state[0] + sum(
-                np.array(self.state[1 : (self.stock_dim + 1)]) #stock prices
-                * np.array(self.state[(self.stock_dim + 1) : (self.stock_dim * 2 + 1)]) # stock shares
+                np.array(self.state[1 : (self.stock_dim + 1)])
+                * np.array(self.state[(self.stock_dim + 1) : (self.stock_dim * 2 + 1)])
             )
-            # print("begin_total_asset:{}".format(begin_total_asset)) # this prints the asset at each time step
+            # print("begin_total_asset:{}".format(begin_total_asset))
 
-            # 3. execute trades
-            argsort_actions = np.argsort(actions) # sort actions from most negative to most positive
+            argsort_actions = np.argsort(actions)
             sell_index = argsort_actions[: np.where(actions < 0)[0].shape[0]]
             buy_index = argsort_actions[::-1][: np.where(actions > 0)[0].shape[0]]
 
@@ -427,13 +346,11 @@ class StockTradingEnv(gym.Env):
 
             # state: s -> s+1
             self.day += 1
-            self.data = self.df.loc[self.day, :]
+            self.data = self._get_day_data(self.day)
             if self.turbulence_threshold is not None:
-                if len(self.df.tic.unique()) == 1:
-                    # For single stock, self.data is a Series, so access directly
+                if len(self.df.Stock.unique()) == 1:
                     self.turbulence = self.data[self.risk_indicator_col]
-                elif len(self.df.tic.unique()) > 1:
-                    # For multiple stocks, self.data is a DataFrame, so use .values
+                elif len(self.df.Stock.unique()) > 1:
                     self.turbulence = self.data[self.risk_indicator_col].values[0]
             self.state = self._update_state()
 
@@ -460,7 +377,7 @@ class StockTradingEnv(gym.Env):
     ):
         # initiate state
         self.day = 0
-        self.data = self.df.loc[self.day, :]
+        self.data = self._get_day_data(self.day)
         self.state = self._initiate_state()
 
         if self.initial:
@@ -490,21 +407,55 @@ class StockTradingEnv(gym.Env):
         self.date_memory = [self._get_date()]
 
         self.episode += 1
-        print("State shape on reset:", len(self.state))
 
         return self.state, {}
 
     def render(self, mode="human", close=False):
         return self.state
+    
+    def _create_day_index(self):
+        """Create a mapping from day number to unique dates for proper data access."""
+        # Get unique dates and sort them
+        all_dates = sorted(self.df['Date'].unique())
+        
+        # Skip dates with NaN values in technical indicators
+        # Check each date to find the first one without NaN values
+        valid_dates = []
+        for date in all_dates:
+            date_data = self.df[self.df['Date'] == date]
+            has_nan = False
+            for tech in self.tech_indicator_list:
+                if date_data[tech].isna().any():
+                    has_nan = True
+                    break
+            if not has_nan:
+                valid_dates.append(date)
+        
+        self.unique_dates = valid_dates
+        self.date_to_day = {date: idx for idx, date in enumerate(self.unique_dates)}
+        self.max_days = len(self.unique_dates)
+        
+        if len(valid_dates) < len(all_dates):
+            skipped_dates = len(all_dates) - len(valid_dates)
+            print(f"Skipped {skipped_dates} days with NaN technical indicators. Training starts from {valid_dates[0].strftime('%Y-%m-%d')}")
+        
+    def _get_day_data(self, day):
+        """Get data for a specific day (all stocks for that day)."""
+        if day >= self.max_days:
+            raise IndexError(f"Day {day} is out of range. Max days: {self.max_days}")
+        
+        target_date = self.unique_dates[day]
+        day_data = self.df[self.df['Date'] == target_date]
+        return day_data
 
     def _initiate_state(self):
         if self.initial:
             # For Initial State
-            if len(self.df.tic.unique()) > 1:
+            if len(self.df.Stock.unique()) > 1:
                 # for multiple stock
                 state = (
                     [self.initial_amount]
-                    + self.data.close.values.tolist()
+                    + self.data.Close.values.tolist()
                     + self.num_stock_shares
                     + sum(
                         (
@@ -524,7 +475,7 @@ class StockTradingEnv(gym.Env):
                 )
         else:
             # Using Previous State
-            if len(self.df.tic.unique()) > 1:
+            if len(self.df.Stock.unique()) > 1:
                 # for multiple stock
                 state = (
                     [self.previous_state[0]]
@@ -553,16 +504,13 @@ class StockTradingEnv(gym.Env):
         return state
 
     def _update_state(self):
-        """
-        creates a new state vector with updated information
-
-        """
-        if len(self.df.tic.unique()) > 1: # for multiple stock
+        if len(self.df.Stock.unique()) > 1:
+            # for multiple stock
             state = (
-                [self.state[0]] # 1. keep current cash
-                + self.data.close.values.tolist() #2. update stock prices (new day), bc new day is updated
-                + list(self.state[(self.stock_dim + 1) : (self.stock_dim * 2 + 1)]) #3. keep current shares
-                + sum( #4. update technical indicators (with ney day stock prices)
+                [self.state[0]]
+                + self.data.Close.values.tolist()
+                + list(self.state[(self.stock_dim + 1) : (self.stock_dim * 2 + 1)])
+                + sum(
                     (
                         self.data[tech].values.tolist()
                         for tech in self.tech_indicator_list
@@ -583,16 +531,15 @@ class StockTradingEnv(gym.Env):
         return state
 
     def _get_date(self):
-        if len(self.df.tic.unique()) > 1:
-            date = self.data.date.unique()[0]
+        if len(self.df.Stock.unique()) > 1:
+            date = self.data.Date.unique()[0]
         else:
-            # For single stock, self.data.date is already a scalar value
-            date = self.data.date
+            date = self.data.Date
         return date
 
     # add save_state_memory to preserve state in the trading process
     def save_state_memory(self):
-        if len(self.df.tic.unique()) > 1:
+        if len(self.df.Stock.unique()) > 1:
             # date and close price length must match actions length
             date_list = self.date_memory[:-1]
             df_date = pd.DataFrame(date_list)
@@ -601,7 +548,7 @@ class StockTradingEnv(gym.Env):
             state_list = self.state_memory
             df_states = pd.DataFrame(
                 state_list,
-                columns=pd.Index([
+                columns=[
                     "cash",
                     "Bitcoin_price",
                     "Gold_price",
@@ -609,7 +556,7 @@ class StockTradingEnv(gym.Env):
                     "Gold_num",
                     "Bitcoin_Disable",
                     "Gold_Disable",
-                ])
+                ],
             )
             df_states.index = df_date.date
             # df_actions = pd.DataFrame({'date':date_list,'actions':action_list})
@@ -631,7 +578,7 @@ class StockTradingEnv(gym.Env):
         return df_account_value
 
     def save_action_memory(self):
-        if len(self.df.tic.unique()) > 1:
+        if len(self.df.Stock.unique()) > 1:
             # date and close price length must match actions length
             date_list = self.date_memory[:-1]
             df_date = pd.DataFrame(date_list)
@@ -639,7 +586,7 @@ class StockTradingEnv(gym.Env):
 
             action_list = self.actions_memory
             df_actions = pd.DataFrame(action_list)
-            df_actions.columns = self.data.tic.values
+            df_actions.columns = self.data.Stock.values
             df_actions.index = df_date.date
             # df_actions = pd.DataFrame({'date':date_list,'actions':action_list})
         else:
@@ -653,9 +600,6 @@ class StockTradingEnv(gym.Env):
         return [seed]
 
     def get_sb_env(self):
-        "Need to call this to use the entire environment!"
         e = DummyVecEnv([lambda: self])
         obs = e.reset()
         return e, obs
-    
-    

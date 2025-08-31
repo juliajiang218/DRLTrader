@@ -2,6 +2,6 @@
 Environment package for stock trading reinforcement learning.
 """
 
-from .env_stocktrading import StockTradingEnv
+from .env_trading import StockTradingEnv
 
 __all__ = ['StockTradingEnv'] 
