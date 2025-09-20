@@ -12,7 +12,7 @@ The project involves implementing and comparing multiple deep reinforcement lear
 ## Input Data:
 **Detailed Data Pipeline Methodologies**
 
-<embed src="data.pipeline.pdf" type="application/pdf" width="100%" height="850px" />
+<embed src="https://github.com/juliajiang218/DRLTrader/master/data.pipeline.pdf" type="application/pdf" width="100%" height="850px" />
 
 
 **Key Implementations can be referenced in /scripts/main.py**
