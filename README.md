@@ -11,7 +11,8 @@ The project involves implementing and comparing multiple deep reinforcement lear
 
 ## Input Data:
 **Detailed Data Pipeline Methodologies**
-[data pipeline.pdf](https://github.com/user-attachments/files/22447578/data.pipeline.pdf)
+
+<embed src="https://yourusername.github.io/your_repository_name/your_file.pdf" type="application/pdf" width="100%" height="850px" />
 
 
 **Key Implementations can be referenced in /scripts/main.py**
