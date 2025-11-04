@@ -4,6 +4,7 @@
 Integrate Deep Reinforcement Learning Agents (A2C, PPO, DDPG, Ensemble Strategy) with explainability features in a simulated real-data driven market to optimize trading strategies and allow users to monitor daily, weekly, monthly portfolio returns. Deployed on Cloud.
 
 ![Jiang_URECA](https://github.com/user-attachments/assets/ef10d959-75c1-421e-8dd8-78cba15d5e0c)
+[data.pipeline.pdf](https://github.com/user-attachments/files/23345949/data.pipeline.pdf)
 
 
 ## Objective
